@@ -1,0 +1,9 @@
+baseURL = "https://yufeizhu-om.github.io/"
+languageCode = "en-us"
+title = "Yufei Zhu"
+theme = "hugo-coder"
+
+[params]
+author = "Yufei Zhu"
+info = "Corporate Finance | Macro-Finance"
+avatarURL = ""      # disables the homepage photo
