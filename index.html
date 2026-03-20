@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yufei Zhu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --body-font: 'Source Sans Pro', system-ui, sans-serif;
-      --serif: 'Libre Baskerville', Georgia, serif;
-      --ink: #222;
+      --body-font: 'Inter', Arial, sans-serif;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --ink: #222222;
       --muted: #555;
       --light: #888;
       --accent: #4a6fa5;
-      --bg: #eef1f5;
+      --bg: #FAFAF7;
       --border: #e0e0e0;
       --link: #4a6fa5;
       --nav-h: 40px;
@@ -62,7 +62,7 @@
 
     /* ── PAGES ── */
     .main { margin-top: var(--nav-h); }
-    .page { display: none; padding: 2.5rem 3rem 5rem; max-width: 100%; box-sizing: border-box; }
+    .page { display: none; padding: 2.5rem 12rem 5rem; max-width: 100%; box-sizing: border-box; }
     .page.active { display: block; }
 
     /* ── HOME: two-column, photo left, bio right ── */
@@ -80,7 +80,7 @@
     }
 
     .home-photo-wrap {
-      width: 200px; height: 200px;
+      width: 280px; height: 280px;
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid var(--border);
@@ -92,7 +92,7 @@
     .home-photo-wrap svg { opacity: 0.35; }
 
     h1.pg-title {
-      font-family: var(--body-font);
+      font-family: var(--serif);
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 0.3rem;
@@ -105,7 +105,7 @@
 
     /* ── SECTION HEADINGS ── */
     h2.sec {
-      font-family: var(--body-font);
+      font-family: var(--serif);
       font-size: 1.2rem;
       font-weight: 600;
       margin: 2rem 0 0.75rem;
@@ -167,7 +167,7 @@
 
     /* ── TEACHING ── */
     .t-sub {
-      font-family: var(--body-font);
+      font-family: var(--serif);
       font-size: 1.0rem; font-weight: 600;
       margin: 1.6rem 0 0.5rem;
     }
