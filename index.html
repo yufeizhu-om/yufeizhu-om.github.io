@@ -39,8 +39,9 @@
       background: var(--bg);
       border-bottom: 1px solid var(--border);
       display: flex;
+      justify-content: flex-end;
       height: var(--nav-h);
-      padding-left: 1rem;
+      padding-right: 2rem;
     }
     .topnav a {
       display: inline-flex;
@@ -62,7 +63,7 @@
 
     /* ── PAGES ── */
     .main { margin-top: var(--nav-h); }
-    .page { display: none; padding: 2.5rem 6rem 5rem; max-width: 100%; box-sizing: border-box; }
+    .page { display: none; padding: 2.5rem 3rem 5rem; max-width: 100%; box-sizing: border-box; }
     .page.active { display: block; }
 
     /* ── HOME: two-column, photo left, bio right ── */
@@ -81,7 +82,7 @@
 
     .home-photo-wrap {
       width: 200px; height: 200px;
-      border-radius: 50%;
+      border-radius: 8px;
       overflow: hidden;
       border: 3px solid var(--border);
       background: #ddd;
@@ -223,44 +224,45 @@
   <!-- HOME -->
   <div class="page active" id="page-home">
 
-    <!-- Photo + name floated left; bio wraps to the right -->
-    <div class="home-left">
-      <div class="home-photo-wrap">
-        <img src="photo.jpg" alt="Yufei Zhu">
+    <div class="home-layout">
+      <!-- LEFT: photo + name -->
+      <div class="home-left">
+        <div class="home-photo-wrap">
+          <img src="photo.jpg" alt="Yufei Zhu">
+        </div>
+        <h1 class="pg-title">Yufei Zhu</h1>
+        <p class="pg-subtitle">
+          Ph.D. Candidate<br>
+          Institute of Operations Research and Analytics (IORA)<br>
+          National University of Singapore (NUS)
+        </p>
+        <p class="pg-addr">
+          Email: yufei_zhu [AT] u [DOT] nus [DOT] edu
+        </p>
       </div>
-      <h1 class="pg-title">Yufei Zhu</h1>
-      <p class="pg-subtitle">
-        Ph.D. Candidate<br>
-        Institute of Operations Research and Analytics (IORA)<br>
-        National University of Singapore (NUS)
-      </p>
-      <p class="pg-addr">
-        Email: yufei_zhu [AT] u [DOT] nus [DOT] edu
-      </p>
-    </div>
 
-    <div class="home-content">
-    <p class="bio">
-      I am a Ph.D. candidate in the
-      <a href="https://iora.nus.edu.sg" target="_blank">Institute of Operations Research and Analytics</a>
-      at the National University of Singapore, working with
-      <a href="https://sites.google.com/view/zhenyuhu" target="_blank">Zhenyu Hu</a>,
-      <a href="https://www.joelgoh.net/" target="_blank">Joel Goh</a>, and
-      <a href="https://sites.google.com/view/zhi-chen-insead" target="_blank">Zhi Chen</a>.
-      My research broadly examines how information and incentives shape strategic
-      decision-making under uncertainty. In particular, I am interested in how feedback mechanisms
-      and contractual arrangements influence innovation sourcing, and how policies affect search
-      outcomes in competitive settings. Methodologically, I draw on applied game theory,
-      dynamic programming, and dynamic contracting. I also have a secondary research interest in
-      healthcare operations, with a focus on infectious disease modelling and improving hospital
-      service systems to enhance healthcare delivery.
-    </p>
-    <p class="bio" style="margin-top:1rem;">
-      I received my B.E. in Industrial Systems Engineering and Management
-      from the National University of Singapore, with a Minor in Financial Mathematics.
-    </p>
-
-      </div><!-- end home-content -->
+      <!-- RIGHT: bio -->
+      <div class="home-content">
+        <p class="bio">
+          I am a Ph.D. candidate in the
+          <a href="https://iora.nus.edu.sg" target="_blank">Institute of Operations Research and Analytics</a>
+          at the National University of Singapore, working with
+          <a href="https://sites.google.com/view/zhenyuhu" target="_blank">Zhenyu Hu</a>,
+          <a href="https://www.joelgoh.net/" target="_blank">Joel Goh</a>, and
+          <a href="https://sites.google.com/view/zhi-chen-insead" target="_blank">Zhi Chen</a>.
+          My research broadly examines how information and incentives shape strategic
+          decision-making under uncertainty. In particular, I am interested in how feedback mechanisms
+          and contractual arrangements influence innovation sourcing, and how policies affect search
+          outcomes in competitive settings. Methodologically, I draw on applied game theory,
+          dynamic programming, and dynamic contracting. I also have a secondary research interest in
+          healthcare operations, with a focus on infectious disease modelling and improving hospital
+          service systems to enhance healthcare delivery.
+        </p>
+        <p class="bio" style="margin-top:1rem;">
+          I received my B.E. in Industrial Systems Engineering and Management
+          from the National University of Singapore, with a Minor in Financial Mathematics.
+        </p>
+      </div>
     </div><!-- end home-layout -->
 
     <h2 class="sec">Research Interests</h2>
