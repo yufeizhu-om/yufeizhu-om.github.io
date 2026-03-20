@@ -19,7 +19,7 @@
       --bg: #FAFAF7;
       --border: #e0e0e0;
       --link: #4a6fa5;
-      --nav-h: 40px;
+      --nav-h: 44px;
     }
 
     html { font-size: 17px; }
@@ -29,18 +29,18 @@
       color: var(--ink);
       background: var(--bg);
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     /* ── TOP NAV ── */
     .topnav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 50;
-      background: var(--bg);
+      flex-shrink: 0;
       display: flex;
       justify-content: flex-end;
       height: var(--nav-h);
       padding-right: 12rem;
+      background: var(--bg);
     }
     .topnav a {
       display: inline-flex;
@@ -60,17 +60,46 @@
       border-bottom-color: var(--ink);
     }
 
-    /* ── PAGES ── */
-    .main { margin-top: var(--nav-h); }
-    .page { display: none; padding: 2.5rem 12rem 5rem; max-width: 100%; box-sizing: border-box; }
-    .page.active { display: block; }
+    /* ── MAIN ── */
+    .main { flex: 1; display: flex; flex-direction: column; }
 
-    /* ── HOME: two-column, photo left, bio right ── */
+    /* ── PAGES ── */
+    .page {
+      display: none;
+      flex-direction: column;
+      flex: 1;
+      padding: 2.5rem 12rem 0;
+    }
+    .page.active { display: flex; }
+
+    /* Home and Teaching: fixed height, no scroll */
+    #page-home, #page-teaching {
+      height: calc(100vh - var(--nav-h));
+      overflow: hidden;
+    }
+
+    /* Research: scrollable */
+    #page-research { overflow-y: auto; padding-bottom: 3rem; }
+
+    /* CV: scrollable, iframe fills space */
+    #page-cv { overflow: hidden; }
+
+    /* ── FOOTER ── */
+    .pg-foot {
+      margin-top: auto;
+      padding: 1.2rem 0 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--light);
+    }
+
+    /* ── HOME ── */
     .home-layout {
       display: flex;
       gap: 7rem;
       align-items: flex-start;
-      margin-bottom: 2.5rem;
+      margin-top: 1.5rem;
+      flex: 1;
     }
 
     .home-left {
@@ -86,10 +115,9 @@
       border: 3px solid var(--border);
       background: #ddd;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.1rem;
+      margin: 0 auto 1rem;
     }
     .home-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .home-photo-wrap svg { opacity: 0.35; }
 
     h1.pg-title {
       font-family: var(--serif);
@@ -103,31 +131,22 @@
 
     .home-content { flex: 1; }
 
+    /* ── BIO ── */
+    .bio { font-size: 0.95rem; line-height: 1.6; color: #333; text-align: justify; }
+    .bio a { color: var(--link); text-decoration: none; }
+    .bio a:hover { text-decoration: underline; }
+
     /* ── SECTION HEADINGS ── */
     h2.sec {
       font-family: var(--serif);
       font-size: 1.2rem;
       font-weight: 600;
-      margin: 2rem 0 0.75rem;
+      margin: 1.5rem 0 0.6rem;
       padding-bottom: 0.3rem;
     }
 
-    /* ── BIO ── */
-    .bio {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #333;
-      text-align: justify;
-    }
-    .bio a { color: var(--link); text-decoration: none; }
-    .bio a:hover { text-decoration: underline; }
-
     /* ── RESEARCH INTERESTS ── */
-    .interests {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
+    .interests { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.4rem; }
     .interests strong { color: var(--ink); }
 
     /* ── PAPERS ── */
@@ -139,26 +158,14 @@
       padding-left: 2.2rem;
       position: relative;
     }
-    .papers li .n {
-      position: absolute; left: 0;
-      color: var(--light); font-weight: 600;
-      font-size: 0.95rem;
-    }
+    .papers li .n { position: absolute; left: 0; color: var(--light); font-weight: 600; font-size: 0.95rem; }
     .papers li .ptitle { font-weight: 600; color: var(--ink); }
-    .papers li .ptitle a { color: var(--ink); text-decoration: none; }
-    .papers li .ptitle a:hover { color: var(--link); text-decoration: underline; }
     .papers li .auth { color: var(--muted); }
     .papers li .venue { font-style: italic; color: var(--muted); }
-    .badges { margin-top: 0.35rem; display: flex; flex-wrap: wrap; gap: 0.3rem; }
-    .badge { font-size: 0.71rem; padding: 0.15rem 0.55rem; border-radius: 2px; font-weight: 600; }
-    .b-rev { background:#e8f4e8; color:#2a6e2a; }
-    .b-awd { background:#eef2ff; color:#3545a0; }
-    .b-fin { background:#fff3e0; color:#8a4000; }
 
     .conf-list { list-style: none; padding: 0; margin: 0; }
     .conf-list li {
-      font-size: 0.95rem;
-      color: var(--muted);
+      font-size: 0.95rem; color: var(--muted);
       padding: 0.1rem 0 0.1rem 1rem;
       border-left: 2px solid var(--border);
       margin-bottom: 0.15rem;
@@ -166,50 +173,52 @@
     .conf-list li span { color: var(--light); font-size: 0.95rem; margin-left: 0.4rem; }
 
     /* ── TEACHING ── */
-    .t-sub {
-      font-family: var(--serif);
-      font-size: 1.0rem; font-weight: 600;
-      margin: 1.6rem 0 0.5rem;
-    }
+    .t-sub { font-family: var(--serif); font-size: 1.0rem; font-weight: 600; margin: 1.2rem 0 0.4rem; }
     .t-list { list-style: none; padding: 0; margin: 0; }
-    .t-list > li { margin-bottom: 1.1rem; font-size: 0.93rem; line-height: 1.75; }
+    .t-list > li { margin-bottom: 0.7rem; font-size: 0.95rem; line-height: 1.5; }
     .t-list > li > .ct { font-weight: 600; }
-    .t-detail { list-style: none; padding: 0; margin: 0.25rem 0 0 1.2rem; }
-    .t-detail li { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.18rem; }
-    .t-detail li strong { color: var(--ink); }
+    .t-detail { list-style: none; padding: 0; margin: 0.2rem 0 0 1.2rem; }
+    .t-detail li { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.15rem; }
 
     /* ── CV ── */
     .cv-dl {
       display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1.3rem;
+      margin-bottom: 1rem;
+      padding: 0.4rem 1.1rem;
       background: var(--accent);
       color: #fff;
-      font-size: 0.95rem; font-weight: 600;
+      font-size: 0.88rem; font-weight: 600;
       text-decoration: none; border-radius: 2px;
       transition: background 0.15s;
     }
     .cv-dl:hover { background: #3a5a8a; }
 
-    /* ── FOOTER ── */
-    .pg-foot {
-      font-size: 0.85rem; color: var(--light);
-      margin-top: 3.5rem; padding-top: 0.9rem;
-      border-top: 1px solid var(--border);
+    .cv-frame-wrap {
+      flex: 1;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+    .cv-frame-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
-      .page { padding: 1.5rem 1.5rem 3rem; }
-      .home-layout { flex-direction: column; align-items: center; }
+    @media (max-width: 900px) {
+      .page { padding: 1.5rem 2rem 0; }
+      #page-home, #page-teaching { height: auto; overflow: visible; }
+      .home-layout { flex-direction: column; align-items: center; gap: 2rem; }
       .home-left { width: 100%; }
       .bio { text-align: left; }
+      .topnav { padding-right: 1rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ── TOP NAV ── -->
+<!-- NAV -->
 <nav class="topnav">
   <a href="#" class="active" onclick="return show('home',this)">Home</a>
   <a href="#" onclick="return show('research',this)">Research</a>
@@ -221,9 +230,7 @@
 
   <!-- HOME -->
   <div class="page active" id="page-home">
-
     <div class="home-layout">
-      <!-- LEFT: photo + name -->
       <div class="home-left">
         <div class="home-photo-wrap">
           <img src="photo.jpg" alt="Yufei Zhu">
@@ -234,15 +241,12 @@
           Institute of Operations Research and Analytics (IORA)<br>
           National University of Singapore (NUS)
         </p>
-        <p class="pg-addr">
-          Email: yufei_zhu [AT] u [DOT] nus [DOT] edu
-        </p>
+        <p class="pg-addr">Email: yufei_zhu [AT] u [DOT] nus [DOT] edu</p>
       </div>
 
-      <!-- RIGHT: bio -->
       <div class="home-content">
-        <p class="bio">
-          I am a Ph.D. candidate in the
+        <p class="bio" style="margin-top:1.5rem;">
+          Hi! I am a Ph.D. candidate in the
           <a href="https://iora.nus.edu.sg" target="_blank">Institute of Operations Research and Analytics</a>
           at the National University of Singapore, working with
           <a href="https://sites.google.com/view/zhenyuhu" target="_blank">Zhenyu Hu</a>,
@@ -262,13 +266,11 @@
           I received my B.E. in Industrial Systems Engineering and Management
           from the National University of Singapore, with a Minor in Financial Mathematics.
         </p>
+        <h2 class="sec">Research Interests</h2>
+        <p class="interests"><strong>Applications:</strong> Innovation Sourcing, Healthcare Operations Management, Platform Operations</p>
+        <p class="interests"><strong>Methodologies:</strong> Applied Game Theory, Dynamic Programming, Dynamic Contracting, Optimization</p>
       </div>
-    </div><!-- end home-layout -->
-
-    <h2 class="sec">Research Interests</h2>
-    <p class="interests"><strong>Applications:</strong> Innovation Sourcing, Healthcare Operations Management, Platform Operations</p>
-    <p class="interests"><strong>Methodologies:</strong> Applied Game Theory, Dynamic Programming, Dynamic Contracting, Optimization</p>
-
+    </div>
     <p class="pg-foot">© 2026 by Yufei Zhu | Last updated: March 2026</p>
   </div>
 
@@ -315,8 +317,7 @@
     </ol>
 
     <h2 class="sec">Conference Presentations</h2>
-
-    <p style="font-size:0.9rem;font-weight:600;margin-bottom:0.5rem;color:var(--ink);">Delegating Innovation: Sequential and Parallel Search under Competition</p>
+    <p style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem;color:var(--ink);">Delegating Innovation: Sequential and Parallel Search under Competition</p>
     <ul class="conf-list">
       <li>36th Annual POMS Conference, Reno, NV, USA <span>May 2026</span></li>
       <li>The 16th POMS-HK International Conference, Shenzhen, China <span>Jan 2026</span></li>
@@ -330,7 +331,7 @@
       <li>INFORMS Annual Meeting, Phoenix, AZ, USA <span>Oct 2023</span></li>
     </ul>
 
-    <p style="font-size:0.9rem;font-weight:600;margin:1.2rem 0 0.5rem;color:var(--ink);">The Strategic Secretary Problem</p>
+    <p style="font-size:0.95rem;font-weight:600;margin:1rem 0 0.4rem;color:var(--ink);">The Strategic Secretary Problem</p>
     <ul class="conf-list">
       <li>36th Annual POMS Conference, Reno, NV, USA <span>May 2026</span></li>
       <li>The 16th POMS-HK International Conference, Shenzhen, China <span>Jan 2026</span></li>
@@ -356,10 +357,10 @@
         <ul class="t-detail" style="margin-top:0.2rem;">
           <li>Selected comments from students:</li>
         </ul>
-        <ul style="list-style:none; padding:0; margin:0.4rem 0 0 1.2rem; border-left: 2px solid #e0e0e0; padding-left: 0.9rem;">
-          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.5rem;">"Very knowledgeable! She also goes around to make sure we are following and incorporates questions within her presentation to encourage participation."</li>
-          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.5rem;">"I enjoyed her lesson content! It was very clear and easy to follow, the small anecdotal stories she included (e.g. a little bit of history behind the manhattan distance) were also interesting."</li>
-          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.5rem;">"She's approachable. Her dynamism and ability to break down difficult concepts."</li>
+        <ul style="list-style:none; padding:0; margin:0.3rem 0 0 1.2rem; border-left:2px solid #e0e0e0; padding-left:0.9rem;">
+          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.4rem;">"Very knowledgeable! She also goes around to make sure we are following and incorporates questions within her presentation to encourage participation."</li>
+          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.4rem;">"I enjoyed her lesson content! It was very clear and easy to follow, the small anecdotal stories she included (e.g. a little bit of history behind the manhattan distance) were also interesting."</li>
+          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.4rem;">"She's approachable. Her dynamism and ability to break down difficult concepts."</li>
           <li style="font-style:italic; color:#666; font-size:0.95rem;">"Clearly communicated the concepts and provided good examples to explain."</li>
         </ul>
       </li>
@@ -387,10 +388,11 @@
 
   <!-- CV -->
   <div class="page" id="page-cv">
-    <h1 class="pg-title">Curriculum Vitae</h1>
-    <!-- Upload your CV as cv.pdf to GitHub alongside index.html for this link to work -->
     <a href="cv.pdf" class="cv-dl" target="_blank">⬇ Download CV (PDF)</a>
-    <p class="pg-foot">© 2026 by Yufei Zhu | Last updated: March 2026</p>
+    <div class="cv-frame-wrap">
+      <iframe src="cv.pdf#toolbar=0" allowfullscreen></iframe>
+    </div>
+    <p class="pg-foot" style="padding-bottom:0.5rem;">© 2026 by Yufei Zhu | Last updated: March 2026</p>
   </div>
 
 </main>
