@@ -72,10 +72,11 @@
     }
     .page.active { display: flex; }
 
-    /* Home and Teaching: fixed height, no scroll */
+    /* Home, Teaching: fixed height, no scroll */
     #page-home, #page-teaching {
       height: calc(100vh - var(--nav-h));
       overflow: hidden;
+      flex: none;
     }
 
     /* Research: scrollable */
@@ -86,12 +87,9 @@
 
     /* ── FOOTER ── */
     .pg-foot {
-      margin-top: auto;
-      padding: 0;
-      border-top: none;
       margin-top: 2.5rem;
       border-top: 1px solid var(--border);
-      padding: 1.2rem 0 1.2rem;
+      padding: 1.2rem 0;
       font-size: 0.78rem;
       color: var(--light);
     }
@@ -205,9 +203,9 @@
       position: relative;
     }
     .cv-frame-wrap iframe {
-      width: 980px;
+      width: 920px;
       height: 1123px;
-      margin-left: -60px;
+      margin-left: -30px;
       border: none;
       display: block;
     }
