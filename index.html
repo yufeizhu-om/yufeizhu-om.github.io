@@ -16,7 +16,7 @@
       --muted: #555;
       --light: #888;
       --accent: #4a6fa5;
-      --bg: #fff;
+      --bg: #eef1f5;
       --border: #e0e0e0;
       --link: #4a6fa5;
       --nav-h: 40px;
@@ -37,7 +37,6 @@
       top: 0; left: 0; right: 0;
       z-index: 50;
       background: var(--bg);
-      border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: flex-end;
       height: var(--nav-h);
@@ -48,7 +47,7 @@
       align-items: center;
       padding: 0 1.2rem;
       font-family: var(--body-font);
-      font-size: 0.88rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--muted);
       text-decoration: none;
@@ -69,14 +68,14 @@
     /* ── HOME: two-column, photo left, bio right ── */
     .home-layout {
       display: flex;
-      gap: 3.5rem;
+      gap: 5rem;
       align-items: flex-start;
       margin-bottom: 2.5rem;
     }
 
     .home-left {
       flex-shrink: 0;
-      width: 220px;
+      width: 280px;
       text-align: center;
     }
 
@@ -93,25 +92,24 @@
     .home-photo-wrap svg { opacity: 0.35; }
 
     h1.pg-title {
-      font-family: var(--serif);
+      font-family: var(--body-font);
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 0.3rem;
       line-height: 1.2;
     }
-    .pg-subtitle { color: var(--muted); font-size: 0.82rem; line-height: 1.7; margin-bottom: 0.2rem; }
-    .pg-addr { color: var(--light); font-size: 0.78rem; line-height: 1.7; }
+    .pg-subtitle { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.2rem; }
+    .pg-addr { color: var(--light); font-size: 0.95rem; line-height: 1.7; }
 
     .home-content { flex: 1; }
 
     /* ── SECTION HEADINGS ── */
     h2.sec {
-      font-family: var(--serif);
+      font-family: var(--body-font);
       font-size: 1.2rem;
       font-weight: 600;
       margin: 2rem 0 0.75rem;
       padding-bottom: 0.3rem;
-      border-bottom: 1px solid var(--border);
     }
 
     /* ── BIO ── */
@@ -126,7 +124,7 @@
 
     /* ── RESEARCH INTERESTS ── */
     .interests {
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       color: var(--muted);
       margin-bottom: 0.5rem;
     }
@@ -136,7 +134,7 @@
     .papers { list-style: none; padding: 0; margin: 0; }
     .papers li {
       margin-bottom: 1.4rem;
-      font-size: 0.93rem;
+      font-size: 0.95rem;
       line-height: 1.8;
       padding-left: 2.2rem;
       position: relative;
@@ -144,7 +142,7 @@
     .papers li .n {
       position: absolute; left: 0;
       color: var(--light); font-weight: 600;
-      font-size: 0.88rem;
+      font-size: 0.95rem;
     }
     .papers li .ptitle { font-weight: 600; color: var(--ink); }
     .papers li .ptitle a { color: var(--ink); text-decoration: none; }
@@ -159,17 +157,17 @@
 
     .conf-list { list-style: none; padding: 0; margin: 0; }
     .conf-list li {
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       color: var(--muted);
       padding: 0.2rem 0 0.2rem 1rem;
       border-left: 2px solid var(--border);
       margin-bottom: 0.3rem;
     }
-    .conf-list li span { color: var(--light); font-size: 0.82rem; margin-left: 0.4rem; }
+    .conf-list li span { color: var(--light); font-size: 0.95rem; margin-left: 0.4rem; }
 
     /* ── TEACHING ── */
     .t-sub {
-      font-family: var(--serif);
+      font-family: var(--body-font);
       font-size: 1.0rem; font-weight: 600;
       margin: 1.6rem 0 0.5rem;
     }
@@ -177,7 +175,7 @@
     .t-list > li { margin-bottom: 1.1rem; font-size: 0.93rem; line-height: 1.75; }
     .t-list > li > .ct { font-weight: 600; }
     .t-detail { list-style: none; padding: 0; margin: 0.25rem 0 0 1.2rem; }
-    .t-detail li { font-size: 0.87rem; color: var(--muted); margin-bottom: 0.18rem; }
+    .t-detail li { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.18rem; }
     .t-detail li strong { color: var(--ink); }
 
     /* ── CV ── */
@@ -187,7 +185,7 @@
       padding: 0.5rem 1.3rem;
       background: var(--accent);
       color: #fff;
-      font-size: 0.85rem; font-weight: 600;
+      font-size: 0.95rem; font-weight: 600;
       text-decoration: none; border-radius: 2px;
       transition: background 0.15s;
     }
@@ -195,7 +193,7 @@
 
     /* ── FOOTER ── */
     .pg-foot {
-      font-size: 0.78rem; color: var(--light);
+      font-size: 0.85rem; color: var(--light);
       margin-top: 3.5rem; padding-top: 0.9rem;
       border-top: 1px solid var(--border);
     }
@@ -250,6 +248,8 @@
           <a href="https://sites.google.com/view/zhenyuhu" target="_blank">Zhenyu Hu</a>,
           <a href="https://www.joelgoh.net/" target="_blank">Joel Goh</a>, and
           <a href="https://sites.google.com/view/zhi-chen-insead" target="_blank">Zhi Chen</a>.
+        </p>
+        <p class="bio" style="margin-top:1rem;">
           My research broadly examines how information and incentives shape strategic
           decision-making under uncertainty. In particular, I am interested in how feedback mechanisms
           and contractual arrangements influence innovation sourcing, and how policies affect search
@@ -357,10 +357,10 @@
           <li>Selected comments from students:</li>
         </ul>
         <ul style="list-style:none; padding:0; margin:0.4rem 0 0 1.2rem; border-left: 2px solid #e0e0e0; padding-left: 0.9rem;">
-          <li style="font-style:italic; color:#666; font-size:0.85rem; margin-bottom:0.5rem;">"Very knowledgeable! She also goes around to make sure we are following and incorporates questions within her presentation to encourage participation."</li>
-          <li style="font-style:italic; color:#666; font-size:0.85rem; margin-bottom:0.5rem;">"I enjoyed her lesson content! It was very clear and easy to follow, the small anecdotal stories she included (e.g. a little bit of history behind the manhattan distance) were also interesting."</li>
-          <li style="font-style:italic; color:#666; font-size:0.85rem; margin-bottom:0.5rem;">"She's approachable. Her dynamism and ability to break down difficult concepts."</li>
-          <li style="font-style:italic; color:#666; font-size:0.85rem;">"Clearly communicated the concepts and provided good examples to explain."</li>
+          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.5rem;">"Very knowledgeable! She also goes around to make sure we are following and incorporates questions within her presentation to encourage participation."</li>
+          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.5rem;">"I enjoyed her lesson content! It was very clear and easy to follow, the small anecdotal stories she included (e.g. a little bit of history behind the manhattan distance) were also interesting."</li>
+          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.5rem;">"She's approachable. Her dynamism and ability to break down difficult concepts."</li>
+          <li style="font-style:italic; color:#666; font-size:0.95rem;">"Clearly communicated the concepts and provided good examples to explain."</li>
         </ul>
       </li>
     </ul>
