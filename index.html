@@ -16,7 +16,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --body-font: 'Inter', Arial, sans-serif;
       --serif: 'Source Serif 4', Georgia, serif;
@@ -29,9 +28,7 @@
       --link: #003D7C;
       --nav-h: 44px;
     }
-
     html { font-size: 17px; }
-
     body {
       font-family: var(--body-font);
       color: var(--ink);
@@ -40,7 +37,6 @@
       display: flex;
       flex-direction: column;
     }
-
     /* ── TOP NAV ── */
     .topnav {
       flex-shrink: 0;
@@ -67,10 +63,8 @@
       color: var(--ink);
       border-bottom-color: var(--ink);
     }
-
     /* ── MAIN ── */
     .main { flex: 1; display: flex; flex-direction: column; }
-
     /* ── PAGES ── */
     .page {
       display: none;
@@ -79,20 +73,16 @@
       padding: 2.5rem 12rem 0 6rem;
     }
     .page.active { display: flex; }
-
     /* Home, Teaching: fixed height, no scroll */
     #page-home, #page-teaching {
       height: calc(100vh - var(--nav-h));
       overflow: hidden;
       flex: none;
     }
-
     /* Research: scrollable */
     #page-research { overflow-y: auto; padding-bottom: 3rem; }
-
     /* CV: scrollable, full A4 display */
     #page-cv { overflow-y: auto; padding-bottom: 2rem; }
-
     /* ── FOOTER ── */
     .pg-foot {
       margin-top: auto;
@@ -101,7 +91,6 @@
       font-size: 0.78rem;
       color: var(--light);
     }
-
     /* ── HOME ── */
     .home-layout {
       display: flex;
@@ -111,14 +100,12 @@
       padding-top: 0;
       flex: 1;
     }
-
     .home-left {
       flex-shrink: 0;
       width: 280px;
       text-align: center;
       padding-top: 1.5rem;
     }
-
     .home-photo-wrap {
       width: 240px; height: 240px;
       border-radius: 50%;
@@ -129,7 +116,6 @@
       margin: 0 auto 1rem;
     }
     .home-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
     h1.pg-title {
       font-family: var(--serif);
       font-size: 1.65rem;
@@ -139,14 +125,11 @@
     }
     .pg-subtitle { color: var(--muted); font-size: 0.86rem; line-height: 1.5; margin-bottom: 0.15rem; }
     .pg-addr { color: var(--light); font-size: 0.83rem; line-height: 1.5; }
-
     .home-content { flex: 1; }
-
     /* ── BIO ── */
     .bio { font-size: 1.05rem; line-height: 1.6; color: #2a2a2a; text-align: justify; }
     .bio a { color: var(--link); text-decoration: underline; }
     .bio a:hover { text-decoration: underline; }
-
     /* ── SECTION HEADINGS ── */
     h2.sec {
       font-family: var(--serif);
@@ -155,11 +138,9 @@
       margin: 1.5rem 0 0.6rem;
       padding-bottom: 0.3rem;
     }
-
     /* ── RESEARCH INTERESTS ── */
     .interests { font-size: 1.05rem; color: var(--muted); margin-bottom: 0.4rem; }
     .interests strong { color: var(--ink); }
-
     /* ── PAPERS ── */
     .papers { list-style: none; padding: 0; margin: 0; }
     .papers li {
@@ -175,7 +156,6 @@
     .papers li .ptitle a:hover { color: var(--ink); }
     .papers li .auth { color: var(--muted); }
     .papers li .venue { font-style: italic; color: var(--muted); }
-
     .conf-list { list-style: none; padding: 0; margin: 0; }
     .conf-list li {
       font-size: 1.05rem; color: var(--muted);
@@ -184,7 +164,6 @@
       margin-bottom: 0.15rem;
     }
     .conf-list li span { color: var(--light); font-size: 1.05rem; margin-left: 0.4rem; }
-
     /* ── TEACHING ── */
     .t-sub { font-family: var(--serif); font-size: 1.21rem; font-weight: 600; margin: 1.2rem 0 0.4rem; }
     .t-list { list-style: none; padding: 0; margin: 0; }
@@ -192,7 +171,6 @@
     .t-list > li > .ct { font-weight: 600; }
     .t-detail { list-style: none; padding: 0; margin: 0.2rem 0 0 1.2rem; }
     .t-detail li { font-size: 1.05rem; color: var(--muted); margin-bottom: 0.15rem; }
-
     /* ── CV ── */
     .cv-dl {
       display: inline-block;
@@ -205,7 +183,6 @@
       transition: background 0.15s;
     }
     .cv-dl:hover { background: #3a5a8a; }
-
     .cv-frame-wrap {
       width: 860px;
       margin: 0 auto;
@@ -219,7 +196,6 @@
       border: none;
       display: block;
     }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .page { padding: 1.5rem 2rem 0; }
@@ -232,7 +208,6 @@
   </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav class="topnav">
   <a href="javascript:void(0)" class="active" onclick="switchPage('home',this)">Home</a>
@@ -240,9 +215,7 @@
   <a href="javascript:void(0)" onclick="switchPage('teaching',this)">Teaching</a>
   <a href="javascript:void(0)" onclick="switchPage('cv',this)">CV</a>
 </nav>
-
 <main class="main">
-
   <!-- HOME -->
   <div class="page active" id="page-home">
     <div class="home-layout">
@@ -258,7 +231,6 @@
         </p>
         <p class="pg-addr">Email: <span id="email-display"></span></p>
       </div>
-
       <div class="home-content">
         <p class="bio" style="margin-top:1.5rem;">
           Hi! I am a final-year Ph.D. student in the <a href="https://iora.nus.edu.sg" target="_blank">Institute of Operations Research and Analytics</a>
@@ -267,7 +239,7 @@
           <a href="https://www.joelgoh.net/" target="_blank">Joel Goh</a>.
         </p>
         <p class="bio" style="margin-top:1rem;">
-          I study how firms should design dynamic operational processes when participants respond strategically to information, incentives, and one another&rsquo;s actions. The central challenge is that seemingly appealing choices, such as revealing more information or strengthening incentives, may turn out to be suboptimal when evaluated jointly with the behavior they induce among participants. I examine this challenge across contexts including talent recruitment, innovation sourcing and service delivery, developing analytical models that characterize optimal operating policies. Methodologically, my work draws on game theory and dynamic programming.
+          I study how firms should design dynamic operational processes when participants respond strategically to information, incentives, and one another&rsquo;s actions. The central challenge is that seemingly appealing policies, such as revealing more information, strengthening incentives, or introducing additional competition, may turn out to be suboptimal once the behavior they induce is taken into account. I examine this challenge across contexts including talent recruitment, innovation sourcing and human&ndash;AI systems, developing analytical models that characterize optimal information, incentive, and deployment policies. Methodologically, my work draws on game theory, dynamic programming, and dynamic contracting.
         </p>
         <p class="bio" style="margin-top:1rem;">
           I received my B.E. in Industrial Systems Engineering and Management
@@ -280,11 +252,9 @@
     </div>
     <p class="pg-foot">© 2026 by Yufei Zhu</p>
   </div>
-
   <!-- RESEARCH -->
   <div class="page" id="page-research">
     <h1 class="pg-title">Research</h1>
-
     <h2 class="sec">Working Papers</h2>
     <ol class="papers">
       <li>
@@ -303,7 +273,6 @@
         <span class="auth">with Tian Feng, Yangge Xiao, and Ying-Ju Chen.</span>
       </li>
     </ol>
-
     <h2 class="sec">Work in Progress</h2>
     <ol class="papers" start="4">
       <li>
@@ -312,7 +281,6 @@
         <span class="auth">with Zhi Chen and Zhenyu Hu.</span>
       </li>
     </ol>
-
     <h2 class="sec">Conference Presentations</h2>
     <p style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem;color:var(--ink);">Delegating Innovation: Sequential and Parallel Search under Competition</p>
     <ul class="conf-list">
@@ -327,7 +295,6 @@
       <li>Analytics and Operations Young Scholar Workshop, Singapore <span>Mar 2024</span></li>
       <li>INFORMS Annual Meeting, Phoenix, AZ, USA <span>Oct 2023</span></li>
     </ul>
-
     <p style="font-size:0.95rem;font-weight:600;margin:1rem 0 0.4rem;color:var(--ink);">The Strategic Secretary Problem</p>
     <ul class="conf-list">
       <li>36th Annual POMS Conference, Reno, NV, USA <span>May 2026</span></li>
@@ -336,19 +303,15 @@
       <li>The 15th POMS-HK International Conference, Hong Kong, China <span>Jan 2025</span></li>
       <li>INFORMS Annual Meeting, Seattle, WA, USA <span>Oct 2024</span></li>
     </ul>
-
     <p style="font-size:0.95rem;font-weight:600;margin:1rem 0 0.4rem;color:var(--ink);">Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human</p>
     <ul class="conf-list">
       <li>2026 INFORMS Revenue Management and Pricing Section Conference, Ann Arbor, MI, USA <span>Jul 2026</span></li>
     </ul>
-
     <p class="pg-foot" style="margin-top:2.5rem;">© 2026 by Yufei Zhu</p>
   </div>
-
   <!-- TEACHING -->
   <div class="page" id="page-teaching">
     <h1 class="pg-title">Teaching</h1>
-
     <p class="t-sub">Guest Instructor</p>
     <ul class="t-list">
       <li>
@@ -367,14 +330,12 @@
         </ul>
       </li>
     </ul>
-
     <p class="t-sub">Teaching Assistant</p>
     <ul class="t-list">
       <li><span class="ct">BMA5017 Managerial Operations and Analytics</span> (MBA), Fall 2023</li>
       <li><span class="ct">DBA4711 Applied Analytics</span> (Undergraduate), Spring 2023</li>
       <li><span class="ct">IE6001 Foundations of Optimization</span> (Ph.D.), Fall 2022</li>
     </ul>
-
     <p class="t-sub">Tutorial Instructor</p>
     <ul class="t-list">
       <li>
@@ -384,10 +345,8 @@
         </ul>
       </li>
     </ul>
-
     <p class="pg-foot">© 2026 by Yufei Zhu</p>
   </div>
-
   <!-- CV -->
   <div class="page" id="page-cv">
     <p style="margin-bottom:1rem; width:860px; margin-left:auto; margin-right:auto; text-align:left;">
@@ -398,9 +357,7 @@
     </div>
     <p class="pg-foot" style="margin-top:2.5rem;">© 2026 by Yufei Zhu</p>
   </div>
-
 </main>
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     window.switchPage = function(id, el) {
