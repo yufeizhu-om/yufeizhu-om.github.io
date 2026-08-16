@@ -5,20 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yufei Zhu | PhD Candidate, NUS IORA</title>
   <meta name="description" content="Yufei Zhu is a PhD candidate at the Institute of Operations Research and Analytics (IORA), National University of Singapore. She studies how firms should design dynamic operational processes when participants respond strategically to information, incentives and one another's actions.">
-  <meta name="keywords" content="Yufei Zhu, NUS, IORA, Operations Research, Information and Incentive Design, Search and Matching, Innovation Sourcing, Human-AI Interaction, Healthcare Operations, Hospital-at-Home, Dynamic Contracting, Game Theory, PhD">
+  <meta name="keywords" content="Yufei Zhu, NUS, IORA, Operations Research, Information and Incentive Design, Search and Matching, Labor Platforms, Innovation Sourcing, Human-AI Operations, Human-AI Contracting, Healthcare Operations, Hospital-at-Home, Dynamic Contracting, Game Theory, PhD">
   <meta name="author" content="Yufei Zhu">
   <meta property="og:title" content="Yufei Zhu | PhD Candidate, NUS IORA">
-  <meta property="og:description" content="PhD candidate at NUS IORA researching talent recruitment, innovation sourcing, human-AI systems, and healthcare operations.">
+  <meta property="og:description" content="PhD candidate at NUS IORA researching information and incentive design, human-AI operations, and healthcare operations.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yufeizhu-om.github.io">
   <meta name="robots" content="index, follow">
+
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     :root {
       --body-font: 'Inter', Arial, sans-serif;
       --serif: 'Source Serif 4', Georgia, serif;
@@ -31,7 +38,11 @@
       --link: #003D7C;
       --nav-h: 44px;
     }
-    html { font-size: 17px; }
+
+    html {
+      font-size: 17px;
+    }
+
     body {
       font-family: var(--body-font);
       color: var(--ink);
@@ -40,7 +51,9 @@
       display: flex;
       flex-direction: column;
     }
-    /* ── TOP NAV ── */
+
+    /* TOP NAV */
+
     .topnav {
       flex-shrink: 0;
       display: flex;
@@ -49,6 +62,7 @@
       padding-right: 9rem;
       background: var(--bg);
     }
+
     .topnav a {
       display: inline-flex;
       align-items: center;
@@ -62,31 +76,53 @@
       transition: color 0.15s, border-color 0.15s;
       height: 100%;
     }
-    .topnav a:hover, .topnav a.active {
+
+    .topnav a:hover,
+    .topnav a.active {
       color: var(--ink);
       border-bottom-color: var(--ink);
     }
-    /* ── MAIN ── */
-    .main { flex: 1; display: flex; flex-direction: column; }
-    /* ── PAGES ── */
+
+    /* MAIN */
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* PAGES */
+
     .page {
       display: none;
       flex-direction: column;
       flex: 1;
       padding: 2.5rem 12rem 0 6rem;
     }
-    .page.active { display: flex; }
-    /* Home, Teaching: fixed height, no scroll */
-    #page-home, #page-teaching {
+
+    .page.active {
+      display: flex;
+    }
+
+    #page-home,
+    #page-teaching {
       height: calc(100vh - var(--nav-h));
       overflow: hidden;
       flex: none;
     }
-    /* Research: scrollable */
-    #page-research { overflow-y: auto; padding-bottom: 3rem; }
-    /* CV: scrollable, full A4 display */
-    #page-cv { overflow-y: auto; padding-bottom: 2rem; }
-    /* ── FOOTER ── */
+
+    #page-research {
+      overflow-y: auto;
+      padding-bottom: 3rem;
+    }
+
+    #page-cv {
+      overflow-y: auto;
+      padding-bottom: 2rem;
+    }
+
+    /* FOOTER */
+
     .pg-foot {
       margin-top: auto;
       border-top: 1px solid var(--border);
@@ -94,7 +130,9 @@
       font-size: 0.78rem;
       color: var(--light);
     }
-    /* ── HOME ── */
+
+    /* HOME */
+
     .home-layout {
       display: flex;
       gap: 7rem;
@@ -103,22 +141,34 @@
       padding-top: 0;
       flex: 1;
     }
+
     .home-left {
       flex-shrink: 0;
       width: 280px;
       text-align: center;
       padding-top: 1.5rem;
     }
+
     .home-photo-wrap {
-      width: 240px; height: 240px;
+      width: 240px;
+      height: 240px;
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid var(--border);
       background: #ddd;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 0 auto 1rem;
     }
-    .home-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .home-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     h1.pg-title {
       font-family: var(--serif);
       font-size: 1.65rem;
@@ -126,15 +176,49 @@
       margin-bottom: 0.3rem;
       line-height: 1.2;
     }
-    .pg-subtitle { color: var(--muted); font-size: 0.86rem; line-height: 1.5; margin-bottom: 0.15rem; }
-    .pg-addr { color: var(--light); font-size: 0.83rem; line-height: 1.5; }
-    .pg-addr a { color: inherit; text-decoration: none; }
-    .home-content { flex: 1; }
-    /* ── BIO ── */
-    .bio { font-size: 1.05rem; line-height: 1.6; color: #2a2a2a; text-align: justify; }
-    .bio a { color: var(--link); text-decoration: underline; }
-    .bio a:hover { text-decoration: underline; }
-    /* ── SECTION HEADINGS ── */
+
+    .pg-subtitle {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.5;
+      margin-bottom: 0.15rem;
+    }
+
+    .pg-addr {
+      color: var(--light);
+      font-size: 0.83rem;
+      line-height: 1.5;
+    }
+
+    .pg-addr a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .home-content {
+      flex: 1;
+    }
+
+    /* BIO */
+
+    .bio {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #2a2a2a;
+      text-align: justify;
+    }
+
+    .bio a {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    .bio a:hover {
+      text-decoration: underline;
+    }
+
+    /* SECTION HEADINGS */
+
     h2.sec {
       font-family: var(--serif);
       font-size: 1.32rem;
@@ -142,11 +226,27 @@
       margin: 1.5rem 0 0.6rem;
       padding-bottom: 0.3rem;
     }
-    /* ── RESEARCH INTERESTS ── */
-    .interests { font-size: 1.05rem; color: var(--muted); margin-bottom: 0.4rem; }
-    .interests strong { color: var(--ink); }
-    /* ── PAPERS ── */
-    .papers { list-style: none; padding: 0; margin: 0; }
+
+    /* RESEARCH INTERESTS */
+
+    .interests {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .interests strong {
+      color: var(--ink);
+    }
+
+    /* PAPERS */
+
+    .papers {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
     .papers li {
       margin-bottom: 0.9rem;
       font-size: 1.05rem;
@@ -154,47 +254,122 @@
       padding-left: 2.2rem;
       position: relative;
     }
-    .papers li .n { position: absolute; left: 0; color: var(--light); font-weight: 600; font-size: 1.05rem; }
-    .papers li .ptitle { font-weight: 600; color: var(--ink); }
-    .papers li .ptitle a { color: var(--link); text-decoration: underline; }
-    .papers li .ptitle a:hover { color: var(--ink); }
-    .papers li .auth { color: var(--muted); }
-    .papers li .venue { font-style: italic; color: var(--muted); }
+
+    .papers li .n {
+      position: absolute;
+      left: 0;
+      color: var(--light);
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .papers li .ptitle {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .papers li .ptitle a {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    .papers li .ptitle a:hover {
+      color: var(--ink);
+    }
+
+    .papers li .auth {
+      color: var(--muted);
+    }
+
+    .papers li .venue {
+      font-style: italic;
+      color: var(--muted);
+    }
+
     .paper-head {
       font-size: 0.95rem;
       font-weight: 600;
       color: var(--ink);
       margin: 1rem 0 0.4rem;
     }
-    .conf-list { list-style: none; padding: 0; margin: 0; }
+
+    .conf-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
     .conf-list li {
-      font-size: 1.05rem; color: var(--muted);
+      font-size: 1.05rem;
+      color: var(--muted);
       padding: 0.1rem 0 0.1rem 1rem;
       border-left: 2px solid var(--border);
       margin-bottom: 0.15rem;
     }
-    .conf-list li span { color: var(--light); font-size: 1.05rem; margin-left: 0.4rem; }
-    /* ── TEACHING ── */
-    .t-sub { font-family: var(--serif); font-size: 1.21rem; font-weight: 600; margin: 1.2rem 0 0.4rem; }
-    .t-list { list-style: none; padding: 0; margin: 0; }
-    .t-list > li { margin-bottom: 0.7rem; font-size: 1.05rem; line-height: 1.5; }
-    .t-list > li > .ct { font-weight: 600; }
-    .t-detail { list-style: none; padding: 0; margin: 0.2rem 0 0 1.2rem; }
-    .t-detail li { font-size: 1.05rem; color: var(--muted); margin-bottom: 0.15rem; }
+
+    .conf-list li span {
+      color: var(--light);
+      font-size: 1.05rem;
+      margin-left: 0.4rem;
+    }
+
+    /* TEACHING */
+
+    .t-sub {
+      font-family: var(--serif);
+      font-size: 1.21rem;
+      font-weight: 600;
+      margin: 1.2rem 0 0.4rem;
+    }
+
+    .t-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .t-list > li {
+      margin-bottom: 0.7rem;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .t-list > li > .ct {
+      font-weight: 600;
+    }
+
+    .t-detail {
+      list-style: none;
+      padding: 0;
+      margin: 0.2rem 0 0 1.2rem;
+    }
+
+    .t-detail li {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+
     .t-quotes {
       list-style: none;
       padding: 0 0 0 0.9rem;
       margin: 0.3rem 0 0 1.2rem;
       border-left: 2px solid #e0e0e0;
     }
+
     .t-quotes li {
       font-style: italic;
       color: #666;
       font-size: 0.95rem;
       margin-bottom: 0.4rem;
     }
-    .t-quotes li:last-child { margin-bottom: 0; }
-    /* ── CV ── */
+
+    .t-quotes li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CV */
+
     .cv-open {
       margin-bottom: 1rem;
       width: 860px;
@@ -203,7 +378,13 @@
       margin-right: auto;
       text-align: left;
     }
-    .cv-open a { color: var(--link); font-size: 0.95rem; text-decoration: underline; }
+
+    .cv-open a {
+      color: var(--link);
+      font-size: 0.95rem;
+      text-decoration: underline;
+    }
+
     .cv-frame-wrap {
       width: 860px;
       max-width: 100%;
@@ -211,6 +392,7 @@
       overflow: hidden;
       position: relative;
     }
+
     .cv-frame-wrap iframe {
       width: 920px;
       height: 1123px;
@@ -218,197 +400,339 @@
       border: none;
       display: block;
     }
-    /* ── RESPONSIVE ── */
+
+    /* RESPONSIVE */
+
     @media (max-width: 900px) {
-      .page { padding: 1.5rem 2rem 0; }
-      #page-home, #page-teaching { height: auto; overflow: visible; }
-      .home-layout { flex-direction: column; align-items: center; gap: 2rem; }
-      .home-left { width: 100%; }
-      .bio { text-align: left; }
-      .topnav { padding-right: 1rem; }
-      .cv-frame-wrap iframe { width: 100%; margin-left: 0; height: 80vh; }
+      .page {
+        padding: 1.5rem 2rem 0;
+      }
+
+      #page-home,
+      #page-teaching {
+        height: auto;
+        overflow: visible;
+      }
+
+      .home-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .home-left {
+        width: 100%;
+      }
+
+      .bio {
+        text-align: left;
+      }
+
+      .topnav {
+        padding-right: 1rem;
+      }
+
+      .cv-frame-wrap iframe {
+        width: 100%;
+        margin-left: 0;
+        height: 80vh;
+      }
     }
   </style>
 </head>
+
 <body>
-<!-- NAV -->
-<nav class="topnav">
-  <a href="#home" class="active" data-page="home">Home</a>
-  <a href="#research" data-page="research">Research</a>
-  <a href="#teaching" data-page="teaching">Teaching</a>
-  <a href="#cv" data-page="cv">CV</a>
-</nav>
-<main class="main">
-  <!-- HOME -->
-  <div class="page active" id="page-home">
-    <div class="home-layout">
-      <div class="home-left">
-        <div class="home-photo-wrap">
-          <img src="photo.jpg" alt="Yufei Zhu">
+  <nav class="topnav">
+    <a href="#home" class="active" data-page="home">Home</a>
+    <a href="#research" data-page="research">Research</a>
+    <a href="#teaching" data-page="teaching">Teaching</a>
+    <a href="#cv" data-page="cv">CV</a>
+  </nav>
+
+  <main class="main">
+    <div class="page active" id="page-home">
+      <div class="home-layout">
+        <div class="home-left">
+          <div class="home-photo-wrap">
+            <img src="photo.jpg" alt="Yufei Zhu">
+          </div>
+
+          <h1 class="pg-title">Yufei Zhu</h1>
+
+          <p class="pg-subtitle">
+            Ph.D. Candidate<br>
+            Institute of Operations Research and Analytics (IORA)<br>
+            National University of Singapore (NUS)
+          </p>
+
+          <p class="pg-addr">
+            Email: <span id="email-display"></span>
+          </p>
         </div>
-        <h1 class="pg-title">Yufei Zhu</h1>
-        <p class="pg-subtitle">
-          Ph.D. Candidate<br>
-          Institute of Operations Research and Analytics (IORA)<br>
-          National University of Singapore (NUS)
-        </p>
-        <p class="pg-addr">Email: <span id="email-display"></span></p>
+
+        <div class="home-content">
+          <p class="bio" style="margin-top:1.5rem;">
+            Hi! I am a final-year Ph.D. candidate in the
+            <a href="https://iora.nus.edu.sg" target="_blank" rel="noopener">Institute of Operations Research and Analytics</a>
+            at the National University of Singapore, advised by
+            <a href="https://sites.google.com/view/zhenyuhu" target="_blank" rel="noopener">Zhenyu Hu</a>
+            and
+            <a href="https://www.joelgoh.net/" target="_blank" rel="noopener">Joel Goh</a>.
+          </p>
+
+          <p class="bio" style="margin-top:1rem;">
+            I study how firms should design dynamic operational processes when participants respond strategically: what information to reveal, how to structure incentives, when to introduce competition, and whether to grant agency. Intuitive policies can backfire through the behavior they induce. I examine these questions in operational contexts including labor platforms, innovation sourcing, and human&ndash;AI contracting.
+          </p>
+
+          <p class="bio" style="margin-top:1rem;">
+            More recently, I have been studying healthcare operations, focusing on how to optimize care delivery in hospital-at-home programs, drawing on an ongoing collaboration with practitioners at the National University Health System (NUHS).
+          </p>
+
+          <p class="bio" style="margin-top:1rem;">
+            I received my B.E. in Industrial Systems Engineering and Management
+            from NUS, with a Minor in Financial Mathematics.
+          </p>
+
+          <h2 class="sec" style="margin-top:2rem;">Research Interests</h2>
+
+          <p class="interests">
+            <strong>Research Topics:</strong>
+            Information and Incentive Design, Search and Matching, Human&ndash;AI Operations, Healthcare Operations
+          </p>
+
+          <p class="interests">
+            <strong>Methodologies:</strong>
+            Game Theory, Dynamic Programming, Dynamic Contracting
+          </p>
+        </div>
       </div>
-      <div class="home-content">
-        <p class="bio" style="margin-top:1.5rem;">
-          Hi! I am a final-year Ph.D. candidate in the <a href="https://iora.nus.edu.sg" target="_blank" rel="noopener">Institute of Operations Research and Analytics</a>
-          at the National University of Singapore, advised by
-          <a href="https://sites.google.com/view/zhenyuhu" target="_blank" rel="noopener">Zhenyu Hu</a> and
-          <a href="https://www.joelgoh.net/" target="_blank" rel="noopener">Joel Goh</a>.
-        </p>
-        <p class="bio" style="margin-top:1rem;">
-          I study how firms should design dynamic operational processes when participants respond strategically: what information to reveal, how to structure incentives, when to introduce competition, and whether to grant agency. Intuitive policies can backfire through the behavior they induce. I examine these questions across talent recruitment, innovation sourcing, and human&ndash;AI interaction.
-        </p>
-        <p class="bio" style="margin-top:1rem;">
-          More recently, I have been studying healthcare operations, focusing on how to optimize care delivery in hospital-at-home programs, drawing on an ongoing collaboration with practitioners at the National University Health System (NUHS).
-        </p>
-        <p class="bio" style="margin-top:1rem;">
-          I received my B.E. in Industrial Systems Engineering and Management
-          from NUS, with a Minor in Financial Mathematics.
-        </p>
-        <h2 class="sec" style="margin-top:2rem;">Research Interests</h2>
-        <p class="interests"><strong>Research Topics:</strong> Information and Incentive Design, Search and Matching, Human&ndash;AI Interaction, Healthcare Operations</p>
-        <p class="interests"><strong>Methodologies:</strong> Game Theory, Dynamic Programming, Dynamic Contracting</p>
+
+      <p class="pg-foot">© 2026 by Yufei Zhu</p>
+    </div>
+
+    <div class="page" id="page-research">
+      <h1 class="pg-title">Research</h1>
+
+      <h2 class="sec">Working Papers</h2>
+
+      <ol class="papers">
+        <li>
+          <span class="n">1.</span>
+          <div class="ptitle">
+            <a href="https://papers.ssrn.com/abstract=6830318" target="_blank" rel="noopener">
+              The Strategic Secretary Problem
+            </a>
+          </div>
+          <span class="auth">with Joel Goh.</span>
+        </li>
+
+        <li>
+          <span class="n">2.</span>
+          <div class="ptitle">
+            <a href="https://papers.ssrn.com/abstract=6968860" target="_blank" rel="noopener">
+              Delegating Innovation: Sequential and Parallel Search under Competition
+            </a>
+          </div>
+          <span class="auth">with Zhi Chen and Zhenyu Hu.</span>
+        </li>
+
+        <li>
+          <span class="n">3.</span>
+          <div class="ptitle">
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6960301" target="_blank" rel="noopener">
+              Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human
+            </a>
+          </div>
+          <span class="auth">with Tian Feng, Yangge Xiao and Ying-Ju Chen.</span>
+        </li>
+      </ol>
+
+      <h2 class="sec">Work in Progress</h2>
+
+      <ol class="papers" start="4">
+        <li>
+          <span class="n">4.</span>
+          <div class="ptitle">
+            Sourcing Innovation: Sequential Search under Competition with Leaderboards
+          </div>
+          <span class="auth">with Zhi Chen and Zhenyu Hu.</span>
+        </li>
+      </ol>
+
+      <h2 class="sec">Conference Presentations</h2>
+
+      <p class="paper-head">
+        Delegating Innovation: Sequential and Parallel Search under Competition
+      </p>
+
+      <ul class="conf-list">
+        <li>36th Annual POMS Conference, Reno, NV, USA <span>May 2026</span></li>
+        <li>The 16th POMS-HK International Conference, Shenzhen, China <span>Jan 2026</span></li>
+        <li>INFORMS Annual Meeting, Atlanta, GA, USA <span>Oct 2025</span></li>
+        <li>INFORMS International Meeting, Singapore <span>Jul 2025</span></li>
+        <li>The 15th POMS-HK International Conference, Hong Kong, China <span>Jan 2025</span></li>
+        <li>INFORMS Annual Meeting, Seattle, WA, USA <span>Oct 2024</span></li>
+        <li>MSOM Conference, Minneapolis, MN, USA <span>Jul 2024</span></li>
+        <li>POMS Annual Conference, Minneapolis, MN, USA <span>Apr 2024</span></li>
+        <li>Analytics and Operations Young Scholar Workshop, Singapore <span>Mar 2024</span></li>
+        <li>INFORMS Annual Meeting, Phoenix, AZ, USA <span>Oct 2023</span></li>
+      </ul>
+
+      <p class="paper-head">The Strategic Secretary Problem</p>
+
+      <ul class="conf-list">
+        <li>36th Annual POMS Conference, Reno, NV, USA <span>May 2026</span></li>
+        <li>The 16th POMS-HK International Conference, Shenzhen, China <span>Jan 2026</span></li>
+        <li>INFORMS International Meeting, Singapore <span>Jul 2025</span></li>
+        <li>The 15th POMS-HK International Conference, Hong Kong, China <span>Jan 2025</span></li>
+        <li>INFORMS Annual Meeting, Seattle, WA, USA <span>Oct 2024</span></li>
+      </ul>
+
+      <p class="paper-head">
+        Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human
+      </p>
+
+      <ul class="conf-list">
+        <li>2026 INFORMS Revenue Management and Pricing Section Conference, Ann Arbor, MI, USA <span>Jul 2026</span></li>
+      </ul>
+
+      <p class="pg-foot" style="margin-top:2.5rem;">© 2026 by Yufei Zhu</p>
+    </div>
+
+    <div class="page" id="page-teaching">
+      <h1 class="pg-title">Teaching</h1>
+
+      <p class="t-sub">Guest Instructor</p>
+
+      <ul class="t-list">
+        <li>
+          <span class="ct">DBA4811 Analytics for Consulting</span>
+          (BBA), Fall 2025 &amp; Fall 2026
+
+          <ul class="t-detail">
+            <li>
+              Designed and delivered lectures on machine learning algorithms,
+              primarily covering non-linear methods.
+            </li>
+          </ul>
+
+          <ul class="t-detail" style="margin-top:0.2rem;">
+            <li>Selected comments from students:</li>
+          </ul>
+
+          <ul class="t-quotes">
+            <li>
+              &ldquo;Very knowledgeable! She also goes around to make sure we are following and incorporates questions within her presentation to encourage participation.&rdquo;
+            </li>
+            <li>
+              &ldquo;I enjoyed her lesson content! It was very clear and easy to follow, the small anecdotal stories she included (e.g. a little bit of history behind the Manhattan distance) were also interesting.&rdquo;
+            </li>
+            <li>
+              &ldquo;She&rsquo;s approachable. Her dynamism and ability to break down difficult concepts.&rdquo;
+            </li>
+            <li>
+              &ldquo;Clearly communicated the concepts and provided good examples to explain.&rdquo;
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <p class="t-sub">Teaching Assistant</p>
+
+      <ul class="t-list">
+        <li>
+          <span class="ct">BMA5017 Managerial Operations and Analytics</span>
+          (MBA), Fall 2023
+        </li>
+        <li>
+          <span class="ct">DBA4711 Applied Analytics</span>
+          (Undergraduate), Spring 2023
+        </li>
+        <li>
+          <span class="ct">IE6001 Foundations of Optimization</span>
+          (Ph.D.), Fall 2022
+        </li>
+      </ul>
+
+      <p class="t-sub">Tutorial Instructor</p>
+
+      <ul class="t-list">
+        <li>
+          <span class="ct">IE2111 ISE Principles &amp; Practice</span>
+          (Undergraduate Core), Spring 2021
+
+          <ul class="t-detail">
+            <li>
+              Conducted 11 tutorial sessions on engineering economics and risk analysis.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <p class="pg-foot">© 2026 by Yufei Zhu</p>
+    </div>
+
+    <div class="page" id="page-cv">
+      <p class="cv-open">
+        <a href="https://drive.google.com/file/d/13ue7PFmvZpRjKk5YbBsOQyBeHn1kj280/view" target="_blank" rel="noopener">
+          Open CV ↗
+        </a>
+      </p>
+
+      <div class="cv-frame-wrap">
+        <iframe
+          src="https://drive.google.com/file/d/13ue7PFmvZpRjKk5YbBsOQyBeHn1kj280/preview"
+          title="CV of Yufei Zhu"
+          allowfullscreen>
+        </iframe>
       </div>
+
+      <p class="pg-foot" style="margin-top:2.5rem;">© 2026 by Yufei Zhu</p>
     </div>
-    <p class="pg-foot">© 2026 by Yufei Zhu</p>
-  </div>
-  <!-- RESEARCH -->
-  <div class="page" id="page-research">
-    <h1 class="pg-title">Research</h1>
-    <h2 class="sec">Working Papers</h2>
-    <ol class="papers">
-      <li>
-        <span class="n">1.</span>
-        <div class="ptitle"><a href="https://papers.ssrn.com/abstract=6830318" target="_blank" rel="noopener">The Strategic Secretary Problem</a></div>
-        <span class="auth">with Joel Goh.</span>
-      </li>
-      <li>
-        <span class="n">2.</span>
-        <div class="ptitle"><a href="https://papers.ssrn.com/abstract=6968860" target="_blank" rel="noopener">Delegating Innovation: Sequential and Parallel Search under Competition</a></div>
-        <span class="auth">with Zhi Chen and Zhenyu Hu.</span>
-      </li>
-      <li>
-        <span class="n">3.</span>
-        <div class="ptitle"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6960301" target="_blank" rel="noopener">Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human</a></div>
-        <span class="auth">with Tian Feng, Yangge Xiao and Ying-Ju Chen.</span>
-      </li>
-    </ol>
-    <h2 class="sec">Work in Progress</h2>
-    <ol class="papers" start="4">
-      <li>
-        <span class="n">4.</span>
-        <div class="ptitle">Sourcing Innovation: Sequential Search under Competition with Leaderboards</div>
-        <span class="auth">with Zhi Chen and Zhenyu Hu.</span>
-      </li>
-    </ol>
-    <h2 class="sec">Conference Presentations</h2>
-    <p class="paper-head">Delegating Innovation: Sequential and Parallel Search under Competition</p>
-    <ul class="conf-list">
-      <li>36th Annual POMS Conference, Reno, NV, USA <span>May 2026</span></li>
-      <li>The 16th POMS-HK International Conference, Shenzhen, China <span>Jan 2026</span></li>
-      <li>INFORMS Annual Meeting, Atlanta, GA, USA <span>Oct 2025</span></li>
-      <li>INFORMS International Meeting, Singapore <span>Jul 2025</span></li>
-      <li>The 15th POMS-HK International Conference, Hong Kong, China <span>Jan 2025</span></li>
-      <li>INFORMS Annual Meeting, Seattle, WA, USA <span>Oct 2024</span></li>
-      <li>MSOM Conference, Minneapolis, MN, USA <span>Jul 2024</span></li>
-      <li>POMS Annual Conference, Minneapolis, MN, USA <span>Apr 2024</span></li>
-      <li>Analytics and Operations Young Scholar Workshop, Singapore <span>Mar 2024</span></li>
-      <li>INFORMS Annual Meeting, Phoenix, AZ, USA <span>Oct 2023</span></li>
-    </ul>
-    <p class="paper-head">The Strategic Secretary Problem</p>
-    <ul class="conf-list">
-      <li>36th Annual POMS Conference, Reno, NV, USA <span>May 2026</span></li>
-      <li>The 16th POMS-HK International Conference, Shenzhen, China <span>Jan 2026</span></li>
-      <li>INFORMS International Meeting, Singapore <span>Jul 2025</span></li>
-      <li>The 15th POMS-HK International Conference, Hong Kong, China <span>Jan 2025</span></li>
-      <li>INFORMS Annual Meeting, Seattle, WA, USA <span>Oct 2024</span></li>
-    </ul>
-    <p class="paper-head">Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human</p>
-    <ul class="conf-list">
-      <li>2026 INFORMS Revenue Management and Pricing Section Conference, Ann Arbor, MI, USA <span>Jul 2026</span></li>
-    </ul>
-    <p class="pg-foot" style="margin-top:2.5rem;">© 2026 by Yufei Zhu</p>
-  </div>
-  <!-- TEACHING -->
-  <div class="page" id="page-teaching">
-    <h1 class="pg-title">Teaching</h1>
-    <p class="t-sub">Guest Instructor</p>
-    <ul class="t-list">
-      <li>
-        <span class="ct">DBA4811 Analytics for Consulting</span> (BBA), Fall 2025 &amp; Fall 2026
-        <ul class="t-detail">
-          <li>Designed and delivered lectures on machine learning algorithms, primarily covering non-linear methods.</li>
-        </ul>
-        <ul class="t-detail" style="margin-top:0.2rem;">
-          <li>Selected comments from students:</li>
-        </ul>
-        <ul class="t-quotes">
-          <li>&ldquo;Very knowledgeable! She also goes around to make sure we are following and incorporates questions within her presentation to encourage participation.&rdquo;</li>
-          <li>&ldquo;I enjoyed her lesson content! It was very clear and easy to follow, the small anecdotal stories she included (e.g. a little bit of history behind the Manhattan distance) were also interesting.&rdquo;</li>
-          <li>&ldquo;She&rsquo;s approachable. Her dynamism and ability to break down difficult concepts.&rdquo;</li>
-          <li>&ldquo;Clearly communicated the concepts and provided good examples to explain.&rdquo;</li>
-        </ul>
-      </li>
-    </ul>
-    <p class="t-sub">Teaching Assistant</p>
-    <ul class="t-list">
-      <li><span class="ct">BMA5017 Managerial Operations and Analytics</span> (MBA), Fall 2023</li>
-      <li><span class="ct">DBA4711 Applied Analytics</span> (Undergraduate), Spring 2023</li>
-      <li><span class="ct">IE6001 Foundations of Optimization</span> (Ph.D.), Fall 2022</li>
-    </ul>
-    <p class="t-sub">Tutorial Instructor</p>
-    <ul class="t-list">
-      <li>
-        <span class="ct">IE2111 ISE Principles &amp; Practice</span> (Undergraduate Core), Spring 2021
-        <ul class="t-detail">
-          <li>Conducted 11 tutorial sessions on engineering economics and risk analysis.</li>
-        </ul>
-      </li>
-    </ul>
-    <p class="pg-foot">© 2026 by Yufei Zhu</p>
-  </div>
-  <!-- CV -->
-  <div class="page" id="page-cv">
-    <p class="cv-open">
-      <a href="https://drive.google.com/file/d/13ue7PFmvZpRjKk5YbBsOQyBeHn1kj280/view" target="_blank" rel="noopener">Open CV ↗</a>
-    </p>
-    <div class="cv-frame-wrap">
-      <iframe src="https://drive.google.com/file/d/13ue7PFmvZpRjKk5YbBsOQyBeHn1kj280/preview" title="CV of Yufei Zhu" allowfullscreen></iframe>
-    </div>
-    <p class="pg-foot" style="margin-top:2.5rem;">© 2026 by Yufei Zhu</p>
-  </div>
-</main>
-<script>
-  (function() {
-    var PAGES = ['home', 'research', 'teaching', 'cv'];
-    function showPage(id) {
-      if (PAGES.indexOf(id) === -1) id = 'home';
-      document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
-      document.querySelectorAll('.topnav a').forEach(function(a) {
-        a.classList.toggle('active', a.getAttribute('data-page') === id);
-      });
-      document.getElementById('page-' + id).classList.add('active');
-      window.scrollTo(0, 0);
-    }
-    function fromHash() {
-      showPage((location.hash || '#home').replace('#', ''));
-    }
-    window.addEventListener('hashchange', fromHash);
-    document.addEventListener('DOMContentLoaded', function() {
-      fromHash();
-      var el = document.getElementById('email-display');
-      if (el) {
-        var e = ['yufei_zhu', 'u.nus.edu'].join('@');
-        el.innerHTML = '<a href="mailto:' + e + '">' + e + '</a>';
+  </main>
+
+  <script>
+    (function() {
+      var PAGES = ['home', 'research', 'teaching', 'cv'];
+
+      function showPage(id) {
+        if (PAGES.indexOf(id) === -1) {
+          id = 'home';
+        }
+
+        document.querySelectorAll('.page').forEach(function(page) {
+          page.classList.remove('active');
+        });
+
+        document.querySelectorAll('.topnav a').forEach(function(link) {
+          link.classList.toggle(
+            'active',
+            link.getAttribute('data-page') === id
+          );
+        });
+
+        document.getElementById('page-' + id).classList.add('active');
+        window.scrollTo(0, 0);
       }
-    });
-  })();
-</script>
+
+      function fromHash() {
+        showPage((location.hash || '#home').replace('#', ''));
+      }
+
+      window.addEventListener('hashchange', fromHash);
+
+      document.addEventListener('DOMContentLoaded', function() {
+        fromHash();
+
+        var emailElement = document.getElementById('email-display');
+
+        if (emailElement) {
+          var email = ['yufei_zhu', 'u.nus.edu'].join('@');
+          emailElement.innerHTML =
+            '<a href="mailto:' + email + '">' + email + '</a>';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
