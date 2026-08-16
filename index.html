@@ -15,11 +15,14 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --body-font: 'Times New Roman', Times, Georgia, serif;
-      --serif: 'Times New Roman', Times, Georgia, serif;
+      --body-font: 'Inter', Arial, sans-serif;
+      --serif: 'Source Serif 4', Georgia, serif;
       --ink: #2a2a2a;
       --muted: #444;
       --light: #888;
@@ -29,7 +32,7 @@
       --link: #003D7C;
       --nav-h: 44px;
     }
-    html { font-size: 18px; }
+    html { font-size: 17px; }
     body {
       font-family: var(--body-font);
       color: var(--ink);
@@ -137,9 +140,8 @@
     .home-content { flex: 1; }
     /* ── BIO ── */
     .bio {
-      font-family: var(--serif);
-      font-size: 1.06rem;
-      line-height: 1.68;
+      font-size: 1.05rem;
+      line-height: 1.6;
       color: var(--ink);
       text-align: justify;
     }
@@ -174,7 +176,7 @@
       position: relative;
     }
     .papers li .n { position: absolute; left: 0; color: var(--light); font-weight: 600; font-size: 1.02rem; }
-    .papers li .ptitle { font-family: var(--serif); font-weight: 600; color: var(--ink); }
+    .papers li .ptitle { font-weight: 600; color: var(--ink); }
     .papers li .ptitle a {
       color: var(--link);
       text-decoration: underline;
@@ -185,7 +187,6 @@
     .papers li .ptitle a:hover { text-decoration-color: var(--link); color: var(--ink); }
     .papers li .auth { color: var(--muted); font-size: 0.95rem; }
     .paper-head {
-      font-family: var(--serif);
       font-size: 1.02rem;
       font-weight: 600;
       color: var(--ink);
@@ -207,7 +208,7 @@
     .t-sub { font-family: var(--serif); font-size: 1.21rem; font-weight: 600; margin: 1.2rem 0 0.4rem; }
     .t-list { list-style: none; padding: 0; margin: 0; }
     .t-list > li { margin-bottom: 0.7rem; font-size: 1.02rem; line-height: 1.5; }
-    .t-list > li > .ct { font-family: var(--serif); font-weight: 600; }
+    .t-list > li > .ct { font-weight: 600; }
     .t-detail { list-style: none; padding: 0; margin: 0.2rem 0 0 1.2rem; }
     .t-detail li { font-size: 0.98rem; color: var(--muted); margin-bottom: 0.15rem; }
     .t-quotes {
@@ -217,7 +218,6 @@
       border-left: 2px solid var(--border);
     }
     .t-quotes li {
-      font-family: var(--serif);
       font-style: italic;
       color: #666;
       font-size: 0.95rem;
