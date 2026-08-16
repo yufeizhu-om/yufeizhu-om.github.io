@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yufei Zhu | PhD Candidate, NUS IORA</title>
-  <meta name="description" content="Yufei Zhu is a PhD candidate at the Institute of Operations Research and Analytics (IORA), National University of Singapore. She studies how firms should design dynamic operational processes when participants respond strategically to information, incentives, and one another's actions.">
-  <meta name="keywords" content="Yufei Zhu, NUS, IORA, Operations Research, Information and Incentive Design, Search and Matching, Innovation Sourcing, Human-AI Systems, Dynamic Contracting, Game Theory, PhD">
+  <meta name="description" content="Yufei Zhu is a PhD candidate at the Institute of Operations Research and Analytics (IORA), National University of Singapore. She studies how firms should design dynamic operational processes when participants respond strategically to information, incentives, and one another's actions, with applications in talent recruitment, innovation sourcing, human-AI systems, and healthcare operations.">
+  <meta name="keywords" content="Yufei Zhu, NUS, IORA, Operations Research, Information and Incentive Design, Search and Matching, Innovation Sourcing, Human-AI Systems, Healthcare Operations, Hospital-at-Home, Dynamic Contracting, Game Theory, PhD">
   <meta name="author" content="Yufei Zhu">
   <meta property="og:title" content="Yufei Zhu | PhD Candidate, NUS IORA">
-  <meta property="og:description" content="PhD candidate at NUS IORA researching talent recruitment, innovation sourcing, and human-AI systems.">
+  <meta property="og:description" content="PhD candidate at NUS IORA researching talent recruitment, innovation sourcing, human-AI systems, and healthcare operations.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yufeizhu-om.github.io">
   <meta name="robots" content="index, follow">
@@ -130,6 +130,7 @@
     .bio { font-size: 1.05rem; line-height: 1.6; color: #2a2a2a; text-align: justify; }
     .bio a { color: var(--link); text-decoration: underline; }
     .bio a:hover { text-decoration: underline; }
+    .bio + .bio { margin-top: 1rem; }
     /* ── SECTION HEADINGS ── */
     h2.sec {
       font-family: var(--serif);
@@ -156,6 +157,13 @@
     .papers li .ptitle a:hover { color: var(--ink); }
     .papers li .auth { color: var(--muted); }
     .papers li .venue { font-style: italic; color: var(--muted); }
+    .paper-head {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 1rem 0 0.4rem;
+    }
+    .paper-head:first-of-type { margin-top: 0; }
     .conf-list { list-style: none; padding: 0; margin: 0; }
     .conf-list li {
       font-size: 1.05rem; color: var(--muted);
@@ -171,21 +179,33 @@
     .t-list > li > .ct { font-weight: 600; }
     .t-detail { list-style: none; padding: 0; margin: 0.2rem 0 0 1.2rem; }
     .t-detail li { font-size: 1.05rem; color: var(--muted); margin-bottom: 0.15rem; }
-    /* ── CV ── */
-    .cv-dl {
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: 0.4rem 1.1rem;
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.88rem; font-weight: 600;
-      text-decoration: none; border-radius: 2px;
-      transition: background 0.15s;
+    .t-quotes {
+      list-style: none;
+      padding: 0 0 0 0.9rem;
+      margin: 0.3rem 0 0 1.2rem;
+      border-left: 2px solid var(--border);
     }
-    .cv-dl:hover { background: #3a5a8a; }
+    .t-quotes li {
+      font-style: italic;
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+    .t-quotes li:last-child { margin-bottom: 0; }
+    /* ── CV ── */
+    .cv-open {
+      margin-bottom: 1rem;
+      width: 860px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .cv-open a { color: var(--link); font-size: 0.95rem; text-decoration: underline; }
     .cv-frame-wrap {
       width: 860px;
-      margin: 0 auto;
+      max-width: 100%;
+      margin: 0.5rem auto 0;
       overflow: hidden;
       position: relative;
     }
@@ -204,16 +224,17 @@
       .home-left { width: 100%; }
       .bio { text-align: left; }
       .topnav { padding-right: 1rem; }
+      .cv-frame-wrap iframe { width: 100%; margin-left: 0; height: 80vh; }
     }
   </style>
 </head>
 <body>
 <!-- NAV -->
 <nav class="topnav">
-  <a href="javascript:void(0)" class="active" onclick="switchPage('home',this)">Home</a>
-  <a href="javascript:void(0)" onclick="switchPage('research',this)">Research</a>
-  <a href="javascript:void(0)" onclick="switchPage('teaching',this)">Teaching</a>
-  <a href="javascript:void(0)" onclick="switchPage('cv',this)">CV</a>
+  <a href="#home" class="active" data-page="home">Home</a>
+  <a href="#research" data-page="research">Research</a>
+  <a href="#teaching" data-page="teaching">Teaching</a>
+  <a href="#cv" data-page="cv">CV</a>
 </nav>
 <main class="main">
   <!-- HOME -->
@@ -233,20 +254,21 @@
       </div>
       <div class="home-content">
         <p class="bio" style="margin-top:1.5rem;">
-          Hi! I am a final-year Ph.D. student in the <a href="https://iora.nus.edu.sg" target="_blank">Institute of Operations Research and Analytics</a>
-          at National University of Singapore, advised by
-          <a href="https://sites.google.com/view/zhenyuhu" target="_blank">Zhenyu Hu</a> and
-          <a href="https://www.joelgoh.net/" target="_blank">Joel Goh</a>.
+          Hi! I am a final-year Ph.D. candidate in the <a href="https://iora.nus.edu.sg" target="_blank" rel="noopener">Institute of Operations Research and Analytics</a>
+          at the National University of Singapore, advised by
+          <a href="https://sites.google.com/view/zhenyuhu" target="_blank" rel="noopener">Zhenyu Hu</a> and
+          <a href="https://www.joelgoh.net/" target="_blank" rel="noopener">Joel Goh</a>.
+          I will be on the academic job market in Fall 2026.
         </p>
-        <p class="bio" style="margin-top:1rem;">
-          I study how firms should design dynamic operational processes when participants respond strategically to information, incentives, and one another&rsquo;s actions. The central challenge is that seemingly appealing policies, such as revealing more information, strengthening incentives, or introducing additional competition, may turn out to be suboptimal once the behavior they induce is taken into account. I examine this challenge across contexts including talent recruitment, innovation sourcing and human&ndash;AI systems, developing analytical models that characterize optimal policies. Methodologically, my work draws on game theory, dynamic programming, and dynamic contracting.
+        <p class="bio">
+          I study how firms should design dynamic operational processes when participants respond strategically to information, incentives, and one another&rsquo;s actions. A central challenge is that seemingly appealing policies, such as revealing more information, strengthening incentives, or introducing additional competition, may turn out to be suboptimal once the behavior they induce is taken into account. I use game-theoretic and dynamic programming models to address this challenge in contexts including talent recruitment, innovation sourcing, and human&ndash;AI systems. More recently, I have begun studying healthcare operations through an ongoing collaboration with the National University Health System (NUHS), focusing on care-delivery operations in large-scale hospital-at-home programs.
         </p>
-        <p class="bio" style="margin-top:1rem;">
+        <p class="bio">
           I received my B.E. in Industrial Systems Engineering and Management
           from NUS, with a Minor in Financial Mathematics.
         </p>
         <h2 class="sec" style="margin-top:2rem;">Research Interests</h2>
-        <p class="interests"><strong>Research Topics:</strong> Information and Incentive Design, Search and Matching, Innovation Sourcing, Human&ndash;AI Systems</p>
+        <p class="interests"><strong>Research Topics:</strong> Information and Incentive Design, Search and Matching, Innovation Sourcing, Human&ndash;AI Systems, Healthcare Operations</p>
         <p class="interests"><strong>Methodologies:</strong> Game Theory, Dynamic Programming, Dynamic Contracting</p>
       </div>
     </div>
@@ -259,17 +281,17 @@
     <ol class="papers">
       <li>
         <span class="n">1.</span>
-        <div class="ptitle"><a href="https://papers.ssrn.com/abstract=6830318" target="_blank">The Strategic Secretary Problem</a></div>
+        <div class="ptitle"><a href="https://papers.ssrn.com/abstract=6830318" target="_blank" rel="noopener">The Strategic Secretary Problem</a></div>
         <span class="auth">with Joel Goh.</span>
       </li>
       <li>
         <span class="n">2.</span>
-        <div class="ptitle"><a href="https://papers.ssrn.com/abstract=6968860" target="_blank">Delegating Innovation: Sequential and Parallel Search under Competition</a></div>
+        <div class="ptitle"><a href="https://papers.ssrn.com/abstract=6968860" target="_blank" rel="noopener">Delegating Innovation: Sequential and Parallel Search under Competition</a></div>
         <span class="auth">with Zhi Chen and Zhenyu Hu.</span>
       </li>
       <li>
         <span class="n">3.</span>
-        <div class="ptitle"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6960301" target="_blank">Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human</a></div>
+        <div class="ptitle"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6960301" target="_blank" rel="noopener">Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human</a></div>
         <span class="auth">with Tian Feng, Yangge Xiao, and Ying-Ju Chen.</span>
       </li>
     </ol>
@@ -282,7 +304,7 @@
       </li>
     </ol>
     <h2 class="sec">Conference Presentations</h2>
-    <p style="font-size:0.95rem;font-weight:600;margin-bottom:0.4rem;color:var(--ink);">Delegating Innovation: Sequential and Parallel Search under Competition</p>
+    <p class="paper-head">Delegating Innovation: Sequential and Parallel Search under Competition</p>
     <ul class="conf-list">
       <li>36th Annual POMS Conference, Reno, NV, USA <span>May 2026</span></li>
       <li>The 16th POMS-HK International Conference, Shenzhen, China <span>Jan 2026</span></li>
@@ -295,7 +317,7 @@
       <li>Analytics and Operations Young Scholar Workshop, Singapore <span>Mar 2024</span></li>
       <li>INFORMS Annual Meeting, Phoenix, AZ, USA <span>Oct 2023</span></li>
     </ul>
-    <p style="font-size:0.95rem;font-weight:600;margin:1rem 0 0.4rem;color:var(--ink);">The Strategic Secretary Problem</p>
+    <p class="paper-head">The Strategic Secretary Problem</p>
     <ul class="conf-list">
       <li>36th Annual POMS Conference, Reno, NV, USA <span>May 2026</span></li>
       <li>The 16th POMS-HK International Conference, Shenzhen, China <span>Jan 2026</span></li>
@@ -303,7 +325,7 @@
       <li>The 15th POMS-HK International Conference, Hong Kong, China <span>Jan 2025</span></li>
       <li>INFORMS Annual Meeting, Seattle, WA, USA <span>Oct 2024</span></li>
     </ul>
-    <p style="font-size:0.95rem;font-weight:600;margin:1rem 0 0.4rem;color:var(--ink);">Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human</p>
+    <p class="paper-head">Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human</p>
     <ul class="conf-list">
       <li>2026 INFORMS Revenue Management and Pricing Section Conference, Ann Arbor, MI, USA <span>Jul 2026</span></li>
     </ul>
@@ -322,11 +344,11 @@
         <ul class="t-detail" style="margin-top:0.2rem;">
           <li>Selected comments from students:</li>
         </ul>
-        <ul style="list-style:none; padding:0; margin:0.3rem 0 0 1.2rem; border-left:2px solid #e0e0e0; padding-left:0.9rem;">
-          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.4rem;">"Very knowledgeable! She also goes around to make sure we are following and incorporates questions within her presentation to encourage participation."</li>
-          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.4rem;">"I enjoyed her lesson content! It was very clear and easy to follow, the small anecdotal stories she included (e.g. a little bit of history behind the manhattan distance) were also interesting."</li>
-          <li style="font-style:italic; color:#666; font-size:0.95rem; margin-bottom:0.4rem;">"She's approachable. Her dynamism and ability to break down difficult concepts."</li>
-          <li style="font-style:italic; color:#666; font-size:0.95rem;">"Clearly communicated the concepts and provided good examples to explain."</li>
+        <ul class="t-quotes">
+          <li>&ldquo;Very knowledgeable! She also goes around to make sure we are following and incorporates questions within her presentation to encourage participation.&rdquo;</li>
+          <li>&ldquo;I enjoyed her lesson content! It was very clear and easy to follow, the small anecdotal stories she included (e.g. a little bit of history behind the Manhattan distance) were also interesting.&rdquo;</li>
+          <li>&ldquo;She&rsquo;s approachable. Her dynamism and ability to break down difficult concepts.&rdquo;</li>
+          <li>&ldquo;Clearly communicated the concepts and provided good examples to explain.&rdquo;</li>
         </ul>
       </li>
     </ul>
@@ -349,29 +371,39 @@
   </div>
   <!-- CV -->
   <div class="page" id="page-cv">
-    <p style="margin-bottom:1rem; width:860px; margin-left:auto; margin-right:auto; text-align:left;">
-      <a href="https://drive.google.com/file/d/13ue7PFmvZpRjKk5YbBsOQyBeHn1kj280/view" target="_blank" style="color:var(--link); font-size:0.95rem; text-decoration:underline;">Open CV ↗</a>
+    <p class="cv-open">
+      <a href="https://drive.google.com/file/d/13ue7PFmvZpRjKk5YbBsOQyBeHn1kj280/view" target="_blank" rel="noopener">Open CV ↗</a>
     </p>
-    <div class="cv-frame-wrap" style="margin-top:0.5rem;">
-      <iframe src="https://drive.google.com/file/d/13ue7PFmvZpRjKk5YbBsOQyBeHn1kj280/preview" allowfullscreen></iframe>
+    <div class="cv-frame-wrap">
+      <iframe src="https://drive.google.com/file/d/13ue7PFmvZpRjKk5YbBsOQyBeHn1kj280/preview" title="CV of Yufei Zhu" allowfullscreen></iframe>
     </div>
     <p class="pg-foot" style="margin-top:2.5rem;">© 2026 by Yufei Zhu</p>
   </div>
 </main>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    window.switchPage = function(id, el) {
+  (function() {
+    var PAGES = ['home', 'research', 'teaching', 'cv'];
+    function showPage(id) {
+      if (PAGES.indexOf(id) === -1) id = 'home';
       document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
-      document.querySelectorAll('.topnav a').forEach(function(a) { a.classList.remove('active'); });
+      document.querySelectorAll('.topnav a').forEach(function(a) {
+        a.classList.toggle('active', a.getAttribute('data-page') === id);
+      });
       document.getElementById('page-' + id).classList.add('active');
-      el.classList.add('active');
-    };
-    var el = document.getElementById('email-display');
-    if (el) {
-      var e = ['yufei_zhu', 'u.nus.edu'].join('@');
-      el.innerHTML = e;
     }
-  });
+    function fromHash() {
+      showPage((location.hash || '#home').replace('#', ''));
+    }
+    window.addEventListener('hashchange', fromHash);
+    document.addEventListener('DOMContentLoaded', function() {
+      fromHash();
+      var el = document.getElementById('email-display');
+      if (el) {
+        var e = ['yufei_zhu', 'u.nus.edu'].join('@');
+        el.innerHTML = '<a href="mailto:' + e + '" style="color:inherit;">' + e + '</a>';
+      }
+    });
+  })();
 </script>
 </body>
 </html>
