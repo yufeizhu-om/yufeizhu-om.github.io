@@ -15,13 +15,11 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --body-font: 'Inter', Arial, sans-serif;
-      --serif: 'Source Serif 4', Georgia, serif;
+      --body-font: 'Times New Roman', Times, Georgia, serif;
+      --serif: 'Times New Roman', Times, Georgia, serif;
       --ink: #2a2a2a;
       --muted: #444;
       --light: #888;
@@ -31,7 +29,7 @@
       --link: #003D7C;
       --nav-h: 44px;
     }
-    html { font-size: 17px; }
+    html { font-size: 18px; }
     body {
       font-family: var(--body-font);
       color: var(--ink);
@@ -39,6 +37,7 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      -webkit-font-smoothing: antialiased;
     }
     /* ── TOP NAV ── */
     .topnav {
@@ -76,10 +75,10 @@
       padding: 2.5rem 12rem 0 6rem;
     }
     .page.active { display: flex; }
-    /* Home, Teaching: fixed height, no scroll */
+    /* Home, Teaching: fill viewport, scroll only if content overflows */
     #page-home, #page-teaching {
       height: calc(100vh - var(--nav-h));
-      overflow: hidden;
+      overflow-y: auto;
       flex: none;
     }
     /* Research: scrollable */
@@ -113,10 +112,10 @@
       width: 240px; height: 240px;
       border-radius: 50%;
       overflow: hidden;
-      border: 3px solid var(--border);
       background: #ddd;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1rem;
+      margin: 0 auto 1.2rem;
+      box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--border), 0 8px 24px rgba(0, 0, 0, 0.09);
     }
     .home-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
     h1.pg-title {
@@ -126,72 +125,103 @@
       margin-bottom: 0.3rem;
       line-height: 1.2;
     }
-    .pg-subtitle { color: var(--muted); font-size: 0.86rem; line-height: 1.5; margin-bottom: 0.15rem; }
+    .name-rule {
+      width: 38px; height: 2px;
+      background: var(--ink);
+      margin: 0.55rem auto 0.75rem;
+    }
+    .pg-subtitle { color: var(--muted); font-size: 0.86rem; line-height: 1.5; margin-bottom: 0.5rem; }
     .pg-addr { color: var(--light); font-size: 0.83rem; line-height: 1.5; }
+    .pg-addr a { color: var(--link); text-decoration: none; border-bottom: 1px solid transparent; }
+    .pg-addr a:hover { border-bottom-color: var(--link); }
     .home-content { flex: 1; }
     /* ── BIO ── */
-    .bio { font-size: 1.05rem; line-height: 1.6; color: #2a2a2a; text-align: justify; }
-    .bio a { color: var(--link); text-decoration: underline; }
-    .bio a:hover { text-decoration: underline; }
+    .bio {
+      font-family: var(--serif);
+      font-size: 1.06rem;
+      line-height: 1.68;
+      color: var(--ink);
+      text-align: justify;
+    }
     .bio + .bio { margin-top: 1rem; }
+    .bio a {
+      color: var(--link);
+      text-decoration: underline;
+      text-decoration-color: rgba(0, 61, 124, 0.35);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.15s;
+    }
+    .bio a:hover { text-decoration-color: var(--link); }
     /* ── SECTION HEADINGS ── */
     h2.sec {
       font-family: var(--serif);
       font-size: 1.32rem;
       font-weight: 600;
       margin: 1.5rem 0 0.6rem;
-      padding-bottom: 0.3rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
     }
     /* ── RESEARCH INTERESTS ── */
-    .interests { font-size: 1.05rem; color: var(--muted); margin-bottom: 0.4rem; }
-    .interests strong { color: var(--ink); }
+    .interests { font-size: 1.02rem; line-height: 1.65; color: var(--muted); margin-bottom: 0.4rem; }
+    .interests strong { color: var(--ink); font-weight: 600; }
     /* ── PAPERS ── */
     .papers { list-style: none; padding: 0; margin: 0; }
     .papers li {
-      margin-bottom: 0.9rem;
-      font-size: 1.05rem;
-      line-height: 1.5;
+      margin-bottom: 1rem;
+      font-size: 1.02rem;
+      line-height: 1.55;
       padding-left: 2.2rem;
       position: relative;
     }
-    .papers li .n { position: absolute; left: 0; color: var(--light); font-weight: 600; font-size: 1.05rem; }
-    .papers li .ptitle { font-weight: 600; color: var(--ink); }
-    .papers li .ptitle a { color: var(--link); text-decoration: underline; }
-    .papers li .ptitle a:hover { color: var(--ink); }
-    .papers li .auth { color: var(--muted); }
-    .papers li .venue { font-style: italic; color: var(--muted); }
+    .papers li .n { position: absolute; left: 0; color: var(--light); font-weight: 600; font-size: 1.02rem; }
+    .papers li .ptitle { font-family: var(--serif); font-weight: 600; color: var(--ink); }
+    .papers li .ptitle a {
+      color: var(--link);
+      text-decoration: underline;
+      text-decoration-color: rgba(0, 61, 124, 0.35);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.15s;
+    }
+    .papers li .ptitle a:hover { text-decoration-color: var(--link); color: var(--ink); }
+    .papers li .auth { color: var(--muted); font-size: 0.95rem; }
     .paper-head {
-      font-size: 0.95rem;
+      font-family: var(--serif);
+      font-size: 1.02rem;
       font-weight: 600;
       color: var(--ink);
-      margin: 1rem 0 0.4rem;
+      margin: 1.2rem 0 0.4rem;
     }
-    .paper-head:first-of-type { margin-top: 0; }
     .conf-list { list-style: none; padding: 0; margin: 0; }
     .conf-list li {
-      font-size: 1.05rem; color: var(--muted);
-      padding: 0.1rem 0 0.1rem 1rem;
+      font-size: 0.95rem; color: var(--muted);
+      padding: 0.18rem 0 0.18rem 1rem;
       border-left: 2px solid var(--border);
       margin-bottom: 0.15rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      max-width: 760px;
     }
-    .conf-list li span { color: var(--light); font-size: 1.05rem; margin-left: 0.4rem; }
+    .conf-list li span { color: var(--light); white-space: nowrap; font-variant-numeric: tabular-nums; }
     /* ── TEACHING ── */
     .t-sub { font-family: var(--serif); font-size: 1.21rem; font-weight: 600; margin: 1.2rem 0 0.4rem; }
     .t-list { list-style: none; padding: 0; margin: 0; }
-    .t-list > li { margin-bottom: 0.7rem; font-size: 1.05rem; line-height: 1.5; }
-    .t-list > li > .ct { font-weight: 600; }
+    .t-list > li { margin-bottom: 0.7rem; font-size: 1.02rem; line-height: 1.5; }
+    .t-list > li > .ct { font-family: var(--serif); font-weight: 600; }
     .t-detail { list-style: none; padding: 0; margin: 0.2rem 0 0 1.2rem; }
-    .t-detail li { font-size: 1.05rem; color: var(--muted); margin-bottom: 0.15rem; }
+    .t-detail li { font-size: 0.98rem; color: var(--muted); margin-bottom: 0.15rem; }
     .t-quotes {
       list-style: none;
       padding: 0 0 0 0.9rem;
-      margin: 0.3rem 0 0 1.2rem;
+      margin: 0.4rem 0 0 1.2rem;
       border-left: 2px solid var(--border);
     }
     .t-quotes li {
+      font-family: var(--serif);
       font-style: italic;
       color: #666;
       font-size: 0.95rem;
+      line-height: 1.55;
       margin-bottom: 0.4rem;
     }
     .t-quotes li:last-child { margin-bottom: 0; }
@@ -204,13 +234,20 @@
       margin-right: auto;
       text-align: left;
     }
-    .cv-open a { color: var(--link); font-size: 0.95rem; text-decoration: underline; }
+    .cv-open a {
+      color: var(--link);
+      font-size: 0.95rem;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .cv-open a:hover { color: var(--ink); }
     .cv-frame-wrap {
       width: 860px;
       max-width: 100%;
       margin: 0.5rem auto 0;
       overflow: hidden;
       position: relative;
+      border: 1px solid var(--border);
     }
     .cv-frame-wrap iframe {
       width: 920px;
@@ -227,6 +264,7 @@
       .home-left { width: 100%; }
       .bio { text-align: left; }
       .topnav { padding-right: 1rem; }
+      .conf-list li { flex-direction: column; gap: 0; }
       .cv-frame-wrap iframe { width: 100%; margin-left: 0; height: 80vh; }
     }
   </style>
@@ -248,6 +286,7 @@
           <img src="photo.jpg" alt="Yufei Zhu">
         </div>
         <h1 class="pg-title">Yufei Zhu</h1>
+        <div class="name-rule"></div>
         <p class="pg-subtitle">
           Ph.D. Candidate<br>
           Institute of Operations Research and Analytics (IORA)<br>
@@ -342,8 +381,6 @@
         <span class="ct">DBA4811 Analytics for Consulting</span> (BBA), Fall 2025 &amp; Fall 2026
         <ul class="t-detail">
           <li>Designed and delivered lectures on machine learning algorithms, primarily covering non-linear methods.</li>
-        </ul>
-        <ul class="t-detail" style="margin-top:0.2rem;">
           <li>Selected comments from students:</li>
         </ul>
         <ul class="t-quotes">
@@ -392,6 +429,7 @@
         a.classList.toggle('active', a.getAttribute('data-page') === id);
       });
       document.getElementById('page-' + id).classList.add('active');
+      window.scrollTo(0, 0);
     }
     function fromHash() {
       showPage((location.hash || '#home').replace('#', ''));
@@ -402,7 +440,7 @@
       var el = document.getElementById('email-display');
       if (el) {
         var e = ['yufei_zhu', 'u.nus.edu'].join('@');
-        el.innerHTML = '<a href="mailto:' + e + '" style="color:inherit;">' + e + '</a>';
+        el.innerHTML = '<a href="mailto:' + e + '">' + e + '</a>';
       }
     });
   })();
