@@ -76,10 +76,9 @@
       padding: 2.5rem 12rem 0 6rem;
     }
     .page.active { display: flex; }
-    /* Home, Teaching: fixed height, no scroll */
+    /* Home, Teaching: fill the screen when content fits, scroll when it doesn't */
     #page-home, #page-teaching {
-      height: calc(100vh - var(--nav-h));
-      overflow: hidden;
+      min-height: calc(100vh - var(--nav-h));
       flex: none;
     }
     /* Research: scrollable */
