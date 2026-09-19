@@ -178,6 +178,38 @@
       vertical-align: 0.12em;
       white-space: nowrap;
     }
+    /* Abstract toggle button and panel */
+    .papers li details.abs { margin-top: 0.4rem; }
+    .papers li details.abs summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.12rem 0.6rem 0.12rem 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .papers li details.abs summary::-webkit-details-marker { display: none; }
+    .papers li details.abs summary:hover,
+    .papers li details.abs[open] summary { border-color: var(--accent); background: #f3f6fa; }
+    .papers li details.abs summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .papers li details.abs .chev { flex-shrink: 0; transition: transform 0.15s; }
+    .papers li details.abs[open] .chev { transform: rotate(90deg); }
+    .papers li details.abs p {
+      margin: 0.6rem 0 0.3rem;
+      padding-left: 0.9rem;
+      border-left: 2px solid var(--border);
+      max-width: 46rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
     .paper-head {
       font-size: 0.95rem;
       font-weight: 600;
@@ -303,21 +335,33 @@
     <ol class="papers">
       <li>
         <span class="n">1.</span>
-        <div class="ptitle"><a href="https://papers.ssrn.com/abstract=6830318" target="_blank" rel="noopener">The Strategic Secretary Problem</a> <span class="jmp">Job Market Paper</span></div>
+        <div class="ptitle"><a href="papers/strategic-secretary-problem.pdf" target="_blank" rel="noopener">The Strategic Secretary Problem</a> <span class="jmp">Job Market Paper</span></div>
         <span class="auth">with Joel Goh.</span>
         <div class="status">Under review at <span class="journal">Management Science</span>.</div>
+        <details class="abs">
+          <summary><svg class="chev" viewBox="0 0 16 16" width="11" height="11" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Abstract</summary>
+          <p>In the classical secretary problem, secretaries have no decision-making agency and are assumed to arrive in a random order. Motivated by modern online labor platforms, we consider a novel variant in which secretaries are strategic agents who choose their arrival times after privately observing their own quality scores. We model the interaction between a hiring firm and <em>N</em>&nbsp;+&nbsp;1 strategic secretaries as a game and characterize the structure of its equilibria. This paper addresses two main questions. First, how do strategic secretaries choose their arrival times in equilibrium? Second, does granting secretaries strategic agency improve or reduce the firm&rsquo;s ability to select the best candidate? We show that when the firm can commit to a hiring policy and observe secretaries&rsquo; quality scores, strategic behavior can improve the firm&rsquo;s probability of hiring the best secretary, this probability approaches approximately 0.71 as the applicant pool grows, compared with 0.58 in the classical problem. However, when the firm observes only rank-based information about applicants, the probability of hiring the best secretary under strategic arrival is the same as in the classical problem, regardless of the firm&rsquo;s commitment power; and when the firm observes quality scores but cannot commit ex ante, no symmetric pure-strategy equilibrium exists. Our analysis highlights that granting applicants greater strategic agency can improve hiring outcomes, but only when accompanied by appropriate institutional conditions. In particular, firms should strengthen their ability to commit to hiring policies and prioritize access to more accurate quality signals.</p>
+        </details>
       </li>
       <li>
         <span class="n">2.</span>
-        <div class="ptitle"><a href="https://papers.ssrn.com/abstract=6968860" target="_blank" rel="noopener">Delegating Innovation: Sequential and Parallel Search under Competition</a></div>
+        <div class="ptitle"><a href="papers/delegating-innovation.pdf" target="_blank" rel="noopener">Delegating Innovation: Sequential and Parallel Search under Competition</a></div>
         <span class="auth">with Zhi Chen and Zhenyu Hu.</span>
         <div class="status">Under review at <span class="journal">Production and Operations Management</span>.</div>
+        <details class="abs">
+          <summary><svg class="chev" viewBox="0 0 16 16" width="11" height="11" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Abstract</summary>
+          <p>Concept generation plays a critical role in the success of new product development (NPD) projects by identifying products or services that address unmet customer needs. Given the inherent uncertainty and complexity of the innovation landscape, it is essential for firms to search broadly across the space of possible concepts to enhance the likelihood of discovering a winning idea. In practice, sequential and parallel search strategies represent two fundamental approaches to concept generation: sequential search develops and evaluates one concept at a time, stopping once a promising idea is found, while parallel search explores multiple concepts simultaneously before selecting the best. This paper considers a setting where a buying firm delegates the search process to multiple suppliers. In such a competitive, multi-agent setting, should the buyer prefer suppliers to adopt sequential or parallel search strategies? By embedding a classical search model into a contest framework, we show that the buyer prefers sequential search when either (i) the unit search cost is high or (ii) the maximum number of evaluation opportunities is large. In these cases, sequential search confers two advantages: an informational benefit that allows suppliers to adapt using performance feedback (a &ldquo;quality effect&rdquo;), and an incentive benefit that encourages suppliers to search more extensively (a &ldquo;quantity effect&rdquo;). When neither condition holds, parallel search is preferred. Solving the buyer&rsquo;s optimal design problem further shows that the optimal supplier base always features restricted entry, limiting participation to as few as two suppliers. We also study an extension in which the firm incurs costs when evaluating submitted samples.</p>
+        </details>
       </li>
       <li>
         <span class="n">3.</span>
-        <div class="ptitle"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6960301" target="_blank" rel="noopener">Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human</a></div>
+        <div class="ptitle"><a href="papers/racing-against-automation.pdf" target="_blank" rel="noopener">Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human</a></div>
         <span class="auth">with Tian Feng, Yangge Xiao and Ying-Ju Chen.</span>
         <div class="status">Major revision at <span class="journal">Manufacturing &amp; Service Operations Management</span>.</div>
+        <details class="abs">
+          <summary><svg class="chev" viewBox="0 0 16 16" width="11" height="11" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Abstract</summary>
+          <p>Recent advances in artificial intelligence (AI), and AI agents in particular, are reshaping innovation by enabling autonomous search, evaluation, and iteration toward new discoveries. Yet human researchers remain essential in novel and poorly structured settings. A human agent may be more productive but privately chooses effort, creating a moral hazard problem; the AI agent requires no incentives but is costly to operate and can preempt the human agent&rsquo;s success. This raises a natural question: When, if ever, should the firm race the AI agent against the human agent rather than rely on either one alone? We develop a continuous-time principal&ndash;agent model in which a principal draws on both a human agent and an independent AI agent in the search for innovation. We establish that when the AI agent is not cost-effective, the principal never deploys it and relies on human-alone search. In contrast, when the AI agent is cost-effective, a natural conjecture is that the principal should always keep it active as a rival, since it can accelerate breakthroughs and, by threatening to preempt the human agent, strengthen the human agent&rsquo;s incentives. We show that this intuition can fail: persistent AI rivalry may lower both the human agent&rsquo;s and the principal&rsquo;s payoffs relative to human-alone search, so aggressive competition can hurt both parties. Instead, the optimal contract may begin with human-alone search, transition to a human&ndash;AI race, and finally switch to autonomous AI search if no breakthrough occurs. Relative to a human&ndash;human benchmark, deploying the AI agent alongside the human can also align the preferences of the principal and the focal human agent over whether competition should come from an AI agent or another human. In an extension with imperfect AI-generated outcomes, the optimal contract features time-varying verification. In sum, AI rivalry is a double-edged sword: it can accelerate discovery and discipline human effort, but deploying it too early crowds out valuable human-alone search, so firms may optimally delay it even when the AI is productive.</p>
+        </details>
       </li>
     </ol>
     <h2 class="sec">Work in Progress</h2>
