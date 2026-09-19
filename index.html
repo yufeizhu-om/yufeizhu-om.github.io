@@ -16,7 +16,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -160,6 +160,24 @@
     .papers li .ptitle a:hover { color: var(--ink); }
     .papers li .auth { color: var(--muted); }
     .papers li .venue { font-style: italic; color: var(--muted); }
+    /* Status line under each paper: journal name in bold italic */
+    .papers li .status { color: var(--muted); }
+    .papers li .journal { font-weight: 600; font-style: italic; color: var(--ink); }
+    /* Job market paper label */
+    .papers li .jmp {
+      display: inline-block;
+      margin-left: 0.5rem;
+      padding: 0.05rem 0.45rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 3px;
+      vertical-align: 0.12em;
+      white-space: nowrap;
+    }
     .paper-head {
       font-size: 0.95rem;
       font-weight: 600;
@@ -285,18 +303,21 @@
     <ol class="papers">
       <li>
         <span class="n">1.</span>
-        <div class="ptitle"><a href="https://papers.ssrn.com/abstract=6830318" target="_blank" rel="noopener">The Strategic Secretary Problem</a></div>
+        <div class="ptitle"><a href="https://papers.ssrn.com/abstract=6830318" target="_blank" rel="noopener">The Strategic Secretary Problem</a> <span class="jmp">Job Market Paper</span></div>
         <span class="auth">with Joel Goh.</span>
+        <div class="status">Under review at <span class="journal">Management Science</span>.</div>
       </li>
       <li>
         <span class="n">2.</span>
         <div class="ptitle"><a href="https://papers.ssrn.com/abstract=6968860" target="_blank" rel="noopener">Delegating Innovation: Sequential and Parallel Search under Competition</a></div>
         <span class="auth">with Zhi Chen and Zhenyu Hu.</span>
+        <div class="status">Under review at <span class="journal">Production and Operations Management</span>.</div>
       </li>
       <li>
         <span class="n">3.</span>
         <div class="ptitle"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6960301" target="_blank" rel="noopener">Racing Against Automation: Dynamic Incentives When AI Can Preempt the Human</a></div>
         <span class="auth">with Tian Feng, Yangge Xiao and Ying-Ju Chen.</span>
+        <div class="status">Major revision at <span class="journal">Manufacturing &amp; Service Operations Management</span>.</div>
       </li>
     </ol>
     <h2 class="sec">Work in Progress</h2>
